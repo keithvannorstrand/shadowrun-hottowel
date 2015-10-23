@@ -1,6 +1,18 @@
+<!-- broken -->
 <div>
-  <h4 slide-toggle='#dataForm'>{{vm.title}}</h4>
-  <div id='dataForm' class='slideable'>
-    <ng-transclude></ng-transclude>
+  <h4 sr-slide-toggle="{{vm.toggleId}}">{{vm.title}}</h4>
+  <div id="{{vm.id}}" class="sr-slideable">
+    <p>
+      OMG<br>I<br>REALLY<br>HOPE<br>THIS<br>IS<br>SLIDING
+    </p>
+  </div>
+</div>
+<!-- functional -->
+<div>
+  <h4 sr-slide-toggle='#TestSlide'>Test Slide</h4>
+  <div id='TestSlide' class='sr-slideable'>
+    <p>
+      OMG<br>I<br>REALLY<br>HOPE<br>THIS<br>IS<br>SLIDING
+    </p>
   </div>
 </div>

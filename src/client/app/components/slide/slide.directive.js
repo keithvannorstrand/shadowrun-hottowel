@@ -1,6 +1,6 @@
 (function(){
   'use strict';
-  
+
   angular.module('app.components.slide')
   .directive('srSlideable', slideableDirective)
   .directive('srSlideToggle', slideToggleDirective);
@@ -35,11 +35,12 @@
     return {
       restrict: 'A',
       link: link
-    }
+    };
   }
 
   function link(scope, element, attrs) {
-    var target = document.querySelector(attrs.slideToggle);
+    console.log(attrs.srSlideToggle);
+    var target = document.querySelector(attrs.srSlideToggle);
     attrs.expanded = false;
     element.bind('click', function() {
       var content = target.querySelector('.slideable_content');
