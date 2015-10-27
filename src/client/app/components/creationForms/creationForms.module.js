@@ -5,6 +5,8 @@
     'app.components.creationForms.attributes',
     'app.components.creationForms.personalData',
     'app.components.creationForms.metatype',
-    'app.components.creationForms.items'
+    'app.components.creationForms.items',
+    'app.components.creationForms.knowledge',
+    'app.components.creationForms.qualities'
   ]);
 })();
