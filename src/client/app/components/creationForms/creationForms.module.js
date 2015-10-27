@@ -7,6 +7,7 @@
     'app.components.creationForms.metatype',
     'app.components.creationForms.items',
     'app.components.creationForms.knowledge',
-    'app.components.creationForms.qualities'
+    'app.components.creationForms.qualities',
+    'app.components.creationForms.skills'
   ]);
 })();
