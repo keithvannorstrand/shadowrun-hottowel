@@ -1,8 +1,17 @@
 <sr-feature-container>
   <h1>Create Page</h1>
-  <sr-slide-container title="Slide Test">
-    <p>
-      OMG<br>I<br>REALLY<br>HOPE<br>THIS<br>IS<br>SLIDING
-    </p>
-  </sr-slide-container>
+
+  <!-- slide container is breaking slide -->
+
+  <!-- <sr-slide-container title="Priority Table">
+    <sr-priority-table></sr-priority-table>
+  </sr-slide-container> -->
+
+  <section>
+    <h2 sr-slide-toggle='#priorityTable'>Priority Table</h2>
+    <div id='priorityTable' class='sr-slideable'>
+      <sr-priority-table></sr-priority-table>
+    </div>
+  </section>
+
 </sr-feature-container>
