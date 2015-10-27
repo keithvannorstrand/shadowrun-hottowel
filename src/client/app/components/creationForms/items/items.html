@@ -1,0 +1,15 @@
+<form>
+  <div>
+    <label for="item-name">Item</label>
+    <input type="text" class="form-control" id="item-name" placeholder="Pistol" ng-model='item'>
+  </div>
+  <div>
+    <label for="item-quantity">Quantity</label>
+    <input type="number" class="form-control" id="item-quantity" ng-model='itemQuantity'>
+  </div>
+  <div>
+    <label for="item-cost">Cost per unit</label>
+    <input type="number" class="form-control" id="item-cost" ng-model='itemCost'>
+  </div>
+  <button type="submit" class="btn btn-default" ng-click='addItem()'>Add Item</button>
+</form>
