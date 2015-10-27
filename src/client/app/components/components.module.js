@@ -5,6 +5,7 @@
     'app.components.slide',
     'app.components.slideContainer',
     'app.components.priorityTable',
-    'app.components.highlight'
+    'app.components.highlight',
+    'app.components.creationForms'
   ]);
 }());

@@ -39,15 +39,12 @@
   }
 
   function link(scope, element, attrs) {
-    // var target = document.querySelector(attrs.srSlideToggle);
-    var target = element.find(attrs.srSlideToggle);
-    console.log('slide element', element);
-    console.log('slide target', target);
+    var target = document.querySelector(attrs.srSlideToggle);
+    // var target = element.find(attrs.srSlideToggle);
     attrs.expanded = false;
     element.bind('click', function() {
-      // var content = target.querySelector('.slideable_content');
-      var content = target.find('.slideable_content');
-      console.log('slide content', content);
+      var content = target.querySelector('.slideable_content');
+      // var content = target.find('.slideable_content');
       if(!attrs.expanded) {
         content.style.border = '1px solid rgba(0,0,0,0)';
         var y = content.clientHeight;
