@@ -23,9 +23,7 @@
         return directive;
 
         function link(scope, element, attrs) {
-            console.log('sidebar', element);
             var $sidebarInner = element.find('.sidebar-inner');
-            console.log('sidebar inner', $sidebarInner);
             var $dropdownElement = element.find('.sidebar-dropdown a');
             element.addClass('sidebar');
             $dropdownElement.click(dropdown);

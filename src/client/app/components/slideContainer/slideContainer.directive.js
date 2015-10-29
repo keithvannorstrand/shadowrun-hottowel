@@ -6,7 +6,7 @@
 
   function slideContainerDirective(){
     return {
-      restrict: 'E',
+      restrict: 'EA',
       transclude: true,
       templateUrl: 'app/components/slideContainer/slideContainer.html',
       scope: {
