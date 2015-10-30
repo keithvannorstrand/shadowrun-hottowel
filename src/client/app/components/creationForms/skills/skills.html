@@ -1,15 +1,15 @@
 <form>
   <div>
     <label for="skill-name">Skill</label>
-    <input type="text" class="form-control" id="skill-name" placeholder="Stealth" ng-model="skill">
+    <input type="text" class="form-control" id="skill-name" placeholder="Stealth" ng-model="vm.skill">
   </div>
   <div>
     <label for="skill-rank">Rank</label>
-    <input type="number" class="form-control" id="skill-rank" ng-model="skillRank">
+    <input type="number" class="form-control" id="skill-rank" ng-model="vm.rank">
   </div>
   <div>
     <label>
-      <input type="checkbox" ng-model="skillGroup">Skill Group?
+      <input type="checkbox" ng-model="vm.group">Skill Group?
     </label>
-  <button type="submit" class="btn btn-default" ng-click="addSkill()">Add Skill</button>
+  <button type="submit" class="btn btn-default" ng-click="vm.addSkill()">Add Skill</button>
 </form>

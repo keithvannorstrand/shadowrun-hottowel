@@ -10,27 +10,29 @@
       templateUrl: 'app/components/creationForms/attributes/attributes.html',
       scope: {},
       controller: AttributesController,
-      // link: attributesLink,
+      link: attributesLink,
       controllerAs: 'vm',
       bindToController: true
     };
   }
 
+  AttributesController.$inject = ['characterservice'];
 
-  function AttributesController(){
+  function AttributesController(characterservice){
     var vm = this;
-
+    vm.attributes = {strength: 1};
+    vm.saveOnChange = function(){
+      characterservice.setAttributes(vm.attributes);
+    }
   }
 
-  // attributesLink.$inject = ['characterservice'];
-  //
-  // function attributesLink(scope, element, attributes, characterservice){
-  //   scope.$watch(function(){
-  //     return attributes.ngModel;
-  //   }, function(newVal, oldVal){
-  //     // characterservice.setAttributes(scope.attributes);
-  //     console.log('HELLO');
-  //   }, true);
-  // }
+
+  function attributesLink(scope, element, attributes, ctrl){
+    scope.$watch(function(){
+      return scope.vm.attributes;
+    }, function(newVal, oldVal){
+      ctrl.saveOnChange();
+    }, true);
+  }
 
 })();

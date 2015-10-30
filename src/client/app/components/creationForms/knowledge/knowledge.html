@@ -1,11 +1,11 @@
 <form>
   <div>
     <label for="knowledge-name">Knowledge Skill</label>
-    <input type="text" class="form-control" id="knowledge-name" placeholder="Corporate" ng-model="knowledge">
+    <input type="text" class="form-control" id="knowledge-name" placeholder="Corporate" ng-model="vm.knowledge">
   </div>
   <div>
     <label for="knowledge-rank">Rank</label>
-    <input type="number" class="form-control" id="knowledge-rank" ng-model="knowledgeRank">
+    <input type="number" class="form-control" id="knowledge-rank" ng-model="vm.rank" min="1" max="6">
   </div>
-  <button type="submit" class="btn btn-default" ng-click="addKnowledge()">Add Skill</button>
+  <button type="submit" class="btn btn-default" ng-click="vm.addKnowledge()">Add Skill</button>
 </form>
