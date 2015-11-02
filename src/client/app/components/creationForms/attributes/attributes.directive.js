@@ -23,7 +23,7 @@
     vm.attributes = {strength: 1};
     vm.saveOnChange = function(){
       characterservice.setAttributes(vm.attributes);
-    }
+    };
   }
 
 

@@ -26,7 +26,7 @@
       vm.qualities.push(vm.quality);
       characterservice.setQualities(vm.qualities);
       vm.quality = '';
-    }
+    };
 
   }
 

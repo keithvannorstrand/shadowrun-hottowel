@@ -16,14 +16,14 @@
     };
   }
 
-  DataFormController.$inject = ['characterservice']
+  DataFormController.$inject = ['characterservice'];
 
   function DataFormController(characterservice){
     var vm = this;
     vm.personalData = {};
     vm.saveOnChange = function(){
       characterservice.setPersonalData(vm.personalData);
-    }
+    };
   }
 
   function dataFormLink(scope, elem, attrs, ctrl){

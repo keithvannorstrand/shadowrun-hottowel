@@ -66,6 +66,11 @@
       return character.items;
     };
 
+    factory.getCharacter = function(){
+      return character;
+    };
+
+
     return factory;
 
   }

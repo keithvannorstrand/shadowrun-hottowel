@@ -15,7 +15,7 @@
     };
   }
 
-  ItemsFormController.$inject = ['characterservice']
+  ItemsFormController.$inject = ['characterservice'];
 
   function ItemsFormController(characterservice){
     var vm = this;

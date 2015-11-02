@@ -12,7 +12,7 @@
       controllerAs: 'vm',
       bindToController: true,
       scope: {}
-    }
+    };
   }
 
   KnowledgeController.$inject = ['characterservice'];
@@ -31,7 +31,7 @@
       vm.knowledge = '';
       vm.rank = 0;
     };
-    
+
   }
 
 })();

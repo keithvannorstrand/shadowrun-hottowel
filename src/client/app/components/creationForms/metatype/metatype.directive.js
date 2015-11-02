@@ -15,7 +15,7 @@
     };
   }
 
-  MetatypeController.$inject = ['characterservice']
+  MetatypeController.$inject = ['characterservice'];
 
   function MetatypeController(characterservice){
     var vm = this;
@@ -23,7 +23,7 @@
     vm.metatype = 'Human';
     vm.saveOnChange = function(){
       characterservice.setMetatype(vm.metatype);
-    }
+    };
   }
 
   function metatypeLink(scope, elem, attrs, ctrl){
@@ -31,7 +31,7 @@
       return scope.vm.metatype;
     }, function(){
       ctrl.saveOnChange();
-    }, true)
+    }, true);
   }
 
 })();
