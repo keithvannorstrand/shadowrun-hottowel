@@ -32,7 +32,7 @@
     function setAttributes(attributes){
       character.attributes = attributes;
 
-      calcPersonalData();
+      calcAttributes();
       console.log('attributes', character.attributes);
     };
 
@@ -49,7 +49,8 @@
     function setPersonalData(data){
       character.personalData = data;
 
-      calcPersonalData();
+      character.personalData.notoriety =
+        (character.personalData.streetCred + character.personalData.publicAwareness) || 0;
       console.log('personal data', character.personalData);
     };
 
@@ -96,9 +97,8 @@
     };
 
     // helper functions
-    function calcPersonalData(){
-      character.personalData.notoriety =
-        (character.personalData.streetCred + character.personalData.publicAwareness) || 0;
+    // calculates data that is dependent on attributes
+    function calcAttributes(){
       character.personalData.composure =
         (character.attributes.charisma + character.attributes.will) || 0;
       character.personalData.judgeIntentions =
@@ -106,9 +106,13 @@
       character.personalData.memory =
         (character.attributes.logic + character.attributes.will) || 0;
       character.personalData.walkSpeed =
-        (character.attributes.agility*2) || 0;
+        (character.attributes.agility * 2) || 0;
       character.personalData.runSpeed =
-        (character.attributes.agility*4) || 0;
+        (character.attributes.agility * 4) || 0;
+      character.attributes.initiative =
+        (character.attributes.reaction + character.attributes.intuition) || 0;
+      character.attributes.astralInitiative =
+        (character.attributes.intuition * 2) || 0;
     }
   }
 
