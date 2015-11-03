@@ -16,7 +16,8 @@
   function compile(element, attr) {
     // wrap tag
     var contents = element.html();
-    element.html('<div class="slideable_content" style="margin:0 !important; padding:0 !important" >' + contents + '</div>');
+    element.html('<div class="slideable_content" style="margin:0 !important; padding:0 !important" >' +
+      contents + '</div>');
 
     return function postLink(scope, element, attrs) {
       // default properties

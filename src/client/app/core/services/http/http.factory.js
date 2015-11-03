@@ -23,24 +23,24 @@
       return $http.post('/create', character);
     }
 
-    function getCharacters = function(){
+    function getCharacters(){
       return $http.get('/create/all');
-    };
+    }
 
-    function deleteCharacter = function(id){
+    function deleteCharacter(id){
       return $http.delete('/create/delete/'+id);
-    };
+    }
 
-    function getUserCharacters = function(){
+    function getUserCharacters(){
       return $http.get('/user/characters');
-    };
+    }
 
-    function saveUserCharacter = function(character){
+    function saveUserCharacter(character){
       return $http.post('/user/character', character);
-    };
+    }
 
-    function updateUserCharacter = function(character){
+    function updateUserCharacter(character){
       return $http.put('/user/character', character);
-    };
+    }
   }
 })();

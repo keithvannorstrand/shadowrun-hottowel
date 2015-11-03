@@ -12,13 +12,13 @@ router.get('/characters', function(req, res){
     .populate('characters')
     .exec(function(err, user){
       if(err){
-        console.log("Couldn't retrieve user's characters.");
+        console.log('Couldn\'t retrieve user\'s characters.');
         res.status(500);
         res.json({
           error: err,
-          message: "Couldn't retrieve user's characters.",
+          message: 'Couldn\'t retrieve user\'s characters.',
           code: 500
-        })
+        });
       } else {
         console.log('users characters', user.characters);
         res.json(user.characters);
@@ -39,11 +39,11 @@ router.post('/character', function(req, res){
   .then(function(response){
     console.log('successfully added character to User');
     res.json(response);
-  }).catch(function(error){
+  }).catch(function(err){
     res.status(500);
     res.json({
       error: err,
-      message: "User wasn't updated, Character isn't tied to User. Try again."
+      message: 'User wasn\'t updated, Character isn\'t tied to User. Try again.'
     });
   }).done();
 });
@@ -54,14 +54,14 @@ router.put('/character', function(req, res){
   var options = {upsert: true, new: true};
   Character.findByIdAndUpdateQ(query, update, options)
   .then(function(response){
-    console.log("Character successfully updated");
+    console.log('Character successfully updated');
     res.json(response);
   }).catch(function(error){
-    console.log("Character update failed");
+    console.log('Character update failed');
     res.status(500);
     res.json({
       error: error,
-      message: "Character update failed."
+      message: 'Character update failed.'
     });
   }).done();
 });

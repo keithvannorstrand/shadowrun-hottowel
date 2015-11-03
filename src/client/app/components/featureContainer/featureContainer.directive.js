@@ -9,6 +9,6 @@
       transclude: true,
       scope: {},
       templateUrl: 'app/components/featureContainer/featureContainer.html'
-    }
+    };
   }
 }());

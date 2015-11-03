@@ -1,12 +1,12 @@
 (function () {
-    'use strict';
+  'use strict';
 
-    angular.module('app', [
-        'app.core',
-        'app.widgets',
-        'app.features',
-        'app.components',
-        'app.layout'
-    ]);
+  angular.module('app', [
+    'app.core',
+    'app.widgets',
+    'app.features',
+    'app.components',
+    'app.layout'
+  ]);
 
 })();
