@@ -5,74 +5,111 @@
     .factory('characterservice', characterFactory);
 
   function characterFactory(){
-    var character = {};
-    var factory = {};
+    var character = {
+      attributes: {},
+      personalData: {}
+    };
+    var factory = {
+      setAttributes: setAttributes,
+      setSkills: setSkills,
+      setKnowledge: setKnowledge,
+      setPersonalData: setPersonalData,
+      setItems: setItems,
+      setMetatype: setMetatype,
+      setQualities: setQualities,
+      getAttributes: getAttributes,
+      getSkills: getSkills,
+      getKnowledge: getKnowledge,
+      getPersonalData: getPersonalData,
+      getItems: getItems,
+      getQualities: getQualities,
+      getCharacter: getCharacter
+    };
 
-    factory.setAttributes = function(attributes){
+    return factory;
+
+    // exported functions
+    function setAttributes(attributes){
       character.attributes = attributes;
+
+      calcPersonalData();
       console.log('attributes', character.attributes);
     };
 
-    factory.setSkills = function(skills){
+    function setSkills(skills){
       character.skills = skills;
       console.log('skills', character.skills);
     };
 
-    factory.setKnowledge = function(knowledge){
+    function setKnowledge(knowledge){
       character.knowledge = knowledge;
       console.log('knowledge', character.knowledge);
     };
 
-    factory.setPersonalData = function(data){
+    function setPersonalData(data){
       character.personalData = data;
+
+      calcPersonalData();
       console.log('personal data', character.personalData);
     };
 
-    factory.setMetatype = function(metatype){
-      character.metatype = metatype;
+    function setMetatype(metatype){
+      character.personalData.metatype = metatype;
     };
 
-    factory.setQualities = function(qualities){
+    function setQualities(qualities){
       character.qualities = qualities;
       console.log('qualities', character.qualities);
     };
 
-    factory.setItems = function(items){
+    function setItems(items){
       character.items = items;
       console.log('items', character.items);
     };
 
-    factory.getAttributes = function(){
+    function getAttributes(){
       return character.attributes;
     };
 
-    factory.getSkills = function(){
+    function getSkills(){
       return character.skills;
     };
 
-    factory.getKnowledge = function(){
+    function getKnowledge(){
       return character.knowledge;
     };
 
-    factory.getPersonalData = function(){
+    function getPersonalData(){
       return character.personalData;
     };
 
-    factory.getQualities = function(){
+    function getQualities(){
       return character.qualities;
     };
 
-    factory.getItems = function(){
+    function getItems(){
       return character.items;
     };
 
-    factory.getCharacter = function(){
+    function getCharacter(){
       return character;
     };
 
-
-    return factory;
-
+    // helper functions
+    function calcPersonalData(){
+      character.personalData.notoriety =
+        (character.personalData.streetCred + character.personalData.publicAwareness) || 0;
+      character.personalData.composure =
+        (character.attributes.charisma + character.attributes.will) || 0;
+      character.personalData.judgeIntentions =
+        (character.attributes.charisma + character.attributes.intuition) || 0;
+      character.personalData.memory =
+        (character.attributes.logic + character.attributes.will) || 0;
+      character.personalData.walkSpeed =
+        (character.attributes.agility*2) || 0;
+      character.personalData.runSpeed =
+        (character.attributes.agility*4) || 0;
+    }
   }
 
 })();

@@ -5,9 +5,9 @@
         .module('app.features.dashboard')
         .controller('DashboardController', DashboardController);
 
-    DashboardController.$inject = ['$q', 'dataservice', 'logger'];
+    DashboardController.$inject = ['$q', 'httpservice', 'logger'];
     /* @ngInject */
-    function DashboardController($q, dataservice, logger) {
+    function DashboardController($q, httpservice, logger) {
         var vm = this;
         vm.news = {
             title: 'shadowrun-hottowel',
@@ -27,14 +27,14 @@
         }
 
         function getMessageCount() {
-            return dataservice.getMessageCount().then(function (data) {
+            return httpservice.getMessageCount().then(function (data) {
                 vm.messageCount = data;
                 return vm.messageCount;
             });
         }
 
         function getPeople() {
-            return dataservice.getPeople().then(function (data) {
+            return httpservice.getPeople().then(function (data) {
                 vm.people = data;
                 return vm.people;
             });

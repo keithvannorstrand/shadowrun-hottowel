@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('app.core.services', [
-    'app.core.services.data',
+    'app.core.services.http',
     'app.core.services.character'
   ]);
 

@@ -5,11 +5,11 @@ describe('DashboardController', function() {
 
     beforeEach(function() {
         bard.appModule('app.features.dashboard');
-        bard.inject('$controller', '$log', '$q', '$rootScope', 'dataservice');
+        bard.inject('$controller', '$log', '$q', '$rootScope', 'httpservice');
     });
 
     beforeEach(function () {
-        sinon.stub(dataservice, 'getPeople').returns($q.when(people));
+        sinon.stub(httpservice, 'getPeople').returns($q.when(people));
         controller = $controller('DashboardController');
         $rootScope.$apply();
     });

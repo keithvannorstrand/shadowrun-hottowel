@@ -7,6 +7,7 @@
     'app.components.priorityTable',
     'app.components.highlight',
     'app.components.creationForms',
-    'app.components.saveCharacter'
+    'app.components.saveCharacter',
+    'app.components.characterDisplay'
   ]);
 }());

@@ -15,14 +15,14 @@
     };
   }
 
-  SaveController.$inject = ['characterservice', 'dataservice'];
+  SaveController.$inject = ['characterservice', 'httpservice'];
 
-  function SaveController(characterservice, dataservice){
+  function SaveController(characterservice, httpservice){
     var vm = this;
 
     vm.save = function(){
       var character = characterservice.getCharacter();
-      dataservice.postCharacter(character);
+      httpservice.postCharacter(character);
     };
   }
 

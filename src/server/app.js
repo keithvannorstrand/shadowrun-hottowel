@@ -20,6 +20,7 @@ app.use(logger('dev'));
 
 app.use('/api', require('./routes/routes'));
 app.use('/local', require('./routes/localAuth'));
+app.use('/user', require('./routes/userRoutes'));
 
 console.log('About to crank up node');
 console.log('PORT=' + port);
