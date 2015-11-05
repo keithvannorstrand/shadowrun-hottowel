@@ -1,0 +1,18 @@
+<div>
+  <table class="table table-condensed">
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Quantity</th>
+        <th ng-if="vm.editable"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="item in vm.items">
+        <td>{{item.item}}</td>
+        <td>{{item.quantity}}</td>
+        <td ng-if="vm.editable"><span ng-click="vm.deleteItem($index)" class="glyphicon glyphicon-remove"></span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

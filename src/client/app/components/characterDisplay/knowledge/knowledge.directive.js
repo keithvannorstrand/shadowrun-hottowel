@@ -34,6 +34,11 @@
     vm.editable = Boolean(vm.editable) || false;
     console.log('editable', vm.editable);
     vm.knowledge = characterservice.getKnowledge();
+
+    vm.deleteKnowledge = function(index){
+      vm.knowledge.splice(index, 1);
+      characterservice.setKnowledge(vm.knowledge);
+    };
   }
 
 })();

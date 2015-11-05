@@ -6,7 +6,8 @@
     'app.components.characterDisplay.personalData',
     'app.components.characterDisplay.attributes',
     'app.components.characterDisplay.skills',
-    'app.components.characterDisplay.knowledge'
+    'app.components.characterDisplay.knowledge',
+    'app.components.characterDisplay.items'
   ]);
 
 })();

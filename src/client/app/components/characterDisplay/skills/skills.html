@@ -16,7 +16,7 @@
           <span ng-if="skill.group" class="glyphicon glyphicon-ok-circle"></span>
           <span ng-if="!skill.group" class="glyphicon glyphicon-remove-circle"></span>
         </td>
-        <td ng-if="vm.editable"><span ng-click="deleteSkill($index)" class="glyphicon glyphicon-remove"></span></td>
+        <td ng-if="vm.editable"><span ng-click="vm.deleteSkill($index)" class="glyphicon glyphicon-remove"></span></td>
       </tr>
     </tbody>
   </table>

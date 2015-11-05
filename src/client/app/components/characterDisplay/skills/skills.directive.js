@@ -33,6 +33,11 @@
 
     vm.editable = Boolean(vm.editable) || false;
     vm.skills = characterservice.getSkills();
+
+    vm.deleteSkill = function(index){
+      vm.skills.splice(index, 1);
+      characterservice.setSkills(vm.skills);
+    }
   }
 
 })();
