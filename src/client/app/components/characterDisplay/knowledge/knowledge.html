@@ -1,0 +1,18 @@
+<div>
+  <table class="table table-condensed">
+    <thead>
+      <tr>
+        <th>Knowledge</th>
+        <th>Rank</th>
+        <th ng-if="vm.editable"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="knowledge in vm.knowledge">
+        <td>{{knowledge.skill}}</td>
+        <td>{{knowledge.rank}}</td>
+        <td ng-if="vm.editable"><span ng-click="deleteKnowledge($index)" class="glyphicon glyphicon-remove"></span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

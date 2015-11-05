@@ -24,11 +24,11 @@
 
     vm.addKnowledge = function() {
       vm.knowledgeArray.push({
-        knowledge: vm.knowledge,
+        skill: vm.skill,
         rank: vm.rank
       });
       characterservice.setKnowledge(vm.knowledgeArray);
-      vm.knowledge = '';
+      vm.skill = '';
       vm.rank = 0;
     };
 

@@ -2,10 +2,11 @@
   'use strict';
 
   angular.module('app.components.characterDisplay',[
-    'app.components.characterDisplay.displayContainer',
+    'app.components.characterDisplay.characterSheet',
     'app.components.characterDisplay.personalData',
     'app.components.characterDisplay.attributes',
-    'app.components.characterDisplay.skills'
+    'app.components.characterDisplay.skills',
+    'app.components.characterDisplay.knowledge'
   ]);
 
 })();
