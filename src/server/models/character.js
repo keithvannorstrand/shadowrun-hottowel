@@ -13,7 +13,12 @@ var characterSchema = new Schema({
     weight: Number,
     notoriety: Number,
     streetCred: Number,
-    publicAwareness: Number
+    publicAwareness: Number,
+    runSpeed: Number,
+    walkSpeed: Number,
+    composure: Number,
+    judgeIntentions: Number,
+    memory: Number
   },
   attributes: {
     body: Number,

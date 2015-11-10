@@ -42,14 +42,9 @@
 
   function link(scope, element, attrs) {
     var target = document.querySelector(attrs.srSlideToggle);
-    // var target = element.find(attrs.srSlideToggle);
-    // console.log('element', element);
-    // console.log('target', element.find('h4'));
     attrs.expanded = false;
     element.bind('click', function() {
       var content = target.querySelector('.slideable_content');
-      // var content = target.find('.slideable_content');
-      // console.log('content', target.find('.slideable_content'));
       if(!attrs.expanded) {
         content.style.border = '1px solid rgba(0,0,0,0)';
         var y = content.clientHeight;

@@ -10,7 +10,8 @@
       templateUrl: 'app/components/characterDisplay/attributes/attributes.html',
       controller: AttributesController,
       controllerAs: 'vm',
-      bindToController: true
+      bindToController: true,
+      scope: {}
     };
   }
 

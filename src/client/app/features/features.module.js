@@ -3,7 +3,8 @@
 
     angular.module('app.features', [
         'app.features.create',
-        'app.features.home'
+        'app.features.home',
+        'app.features.characters'
     ]);
 
 })();

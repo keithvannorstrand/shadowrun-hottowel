@@ -22,6 +22,11 @@ app.use('/api', require('./routes/routes'));
 app.use('/local', require('./routes/localAuth'));
 app.use('/user', require('./routes/userRoutes'));
 
+var mongoose = require('mongoose');
+var Character = require('./models/character.js');
+var User = require('./models/user.js');
+mongoose.connect('mongodb://localhost/shadowrun');
+
 console.log('About to crank up node');
 console.log('PORT=' + port);
 console.log('NODE_ENV=' + environment);

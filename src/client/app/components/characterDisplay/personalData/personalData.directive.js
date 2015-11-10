@@ -4,13 +4,24 @@
   angular.module('app.components.characterDisplay.personalData')
     .directive('srPersonalDataDisplay', displayDirective);
 
-  function displayDirective(){
+  displayDirective.$inject = ['characterservice'];
+
+  function displayDirective(characterservice){
     return {
       restrict: 'E',
       templateUrl: 'app/components/characterDisplay/personalData/personalData.html',
       controller: DisplayController,
       controllerAs: 'vm',
-      bindToController: true
+      bindToController: true,
+      scope: {},
+      link: function(scope, elem, attrs, ctrl){
+        scope.$watch(function(){
+          return characterservice.getPersonalData();
+        }, function(){
+          ctrl.personalData = characterservice.getPersonalData();
+          console.log('data', ctrl.personalData);
+        }, true);
+      }
     };
   }
 

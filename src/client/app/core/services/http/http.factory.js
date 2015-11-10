@@ -19,16 +19,19 @@
 
     return service;
 
+
+    // mostly for dev testing, should be using saveUserCharacter
     function postCharacter(character){
-      return $http.post('/create', character);
+      console.log('hit post client side');
+      return $http.post('/api/character', character);
     }
 
     function getCharacters(){
-      return $http.get('/create/all');
+      return $http.get('/api/characters');
     }
 
     function deleteCharacter(id){
-      return $http.delete('/create/delete/'+id);
+      return $http.delete('/api/character/'+id);
     }
 
     function getUserCharacters(){
