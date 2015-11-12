@@ -10,7 +10,7 @@
       attributes: {},
       personalData: {}
     };
-    
+
     var factory = {
       setAttributes: setAttributes,
       setSkills: setSkills,
@@ -20,13 +20,15 @@
       setMetatype: setMetatype,
       setQualities: setQualities,
       setCharacter: setCharacter,
+      setClass: setClass,
       getAttributes: getAttributes,
       getSkills: getSkills,
       getKnowledge: getKnowledge,
       getPersonalData: getPersonalData,
       getItems: getItems,
       getQualities: getQualities,
-      getCharacter: getCharacter
+      getCharacter: getCharacter,
+      getClass: getClass
     };
 
     return factory;
@@ -77,6 +79,10 @@
       console.log(character);
     }
 
+    function setClass(cl){
+      character.class = cl;
+    }
+
     function getAttributes(){
       return character.attributes;
     }
@@ -103,6 +109,10 @@
 
     function getCharacter(){
       return character;
+    }
+
+    function getClass(){
+      return character.class;
     }
 
     // helper functions

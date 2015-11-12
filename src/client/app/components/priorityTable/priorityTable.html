@@ -12,71 +12,95 @@
   <tbody>
     <tr>
       <td>A</td>
-      <td sr-highlight ng-click='setMetatypePriority("A")'>Human (9)<br>
+      <td sr-highlight="aqua" ng-click='vm.setMetatypePriority("A")'>Human (9)<br>
           Elf (8)<br>
           Dwarf (7)<br>
           Ork (7)<br>
           Troll (5)<br>
         </td>
-      <td sr-highlight ng-click='setAttributesPriority("A")'>24</td>
-      <td sr-highlight ng-click='setMagicPriority("A")'>Magician or Mystic Adept: Magic 6, two Rating 5 Magic skills, 10 spells<br>
-          Technomancer: Resonance 6, two Rating 5 Resonance Skills, 5 complex forms</td>
-      <td sr-highlight ng-click='setSkillsPriority("A")'>46/10</td>
-      <td sr-highlight ng-click='setResourcePriority("A")'>450,000</td>
+      <td sr-highlight="aqua" ng-click='vm.setAttributesPriority("A")'>24</td>
+      <td sr-highlight="aqua">
+        <span sr-highlight="blue" ng-click="vm.setMagicPriority('A', 'Magician')">
+          Magician or Mystic Adept: Magic 6, two Rating 5 Magic skills, 10 spells
+        </span><br>
+        <span sr-highlight="blue" ng-click="vm.setMagicPriority('A', 'Technomancer')">
+          Technomancer: Resonance 6, two Rating 5 Resonance Skills, 5 complex forms
+        </span></td>
+      <td sr-highlight="aqua" ng-click='vm.setSkillsPriority("A")'>46/10</td>
+      <td sr-highlight="aqua" ng-click='vm.setResourcePriority("A")'>450,000</td>
     </tr>
     <tr>
       <td>B</td>
-      <td sr-highlight ng-click='setMetatypePriority("B")'>Human (7)<br>
+      <td sr-highlight="aqua" ng-click='vm.setMetatypePriority("B")'>Human (7)<br>
           Elf (6)<br>
           Dwarf (4)<br>
           Ork (4)<br>
           Troll (0)<br>
         </td>
-      <td sr-highlight ng-click='setAttributesPriority("B")'>20</td>
-      <td sr-highlight ng-click='setMagicPriority("B")'>Magician or Mystic Adept: Magic 4, two Rating 4 Magic skills, 7 spells<br>
-          Technomancer: Resonance 4, two Rating 4 Resonance Skills, 2 complex forms<br>
-          Adept: Magic 6, one Rating 4 Active Skill<br>
-          Aspected Magician: Magic 5, one Rating 4 Magical Skill group<br>
+      <td sr-highlight="aqua" ng-click='vm.setAttributesPriority("B")'>20</td>
+      <td sr-highlight="aqua">
+        <span sr-highlight="blue" ng-click="vm.setMagicPriority('B', 'Magician')">
+          Magician or Mystic Adept: Magic 4, two Rating 4 Magic skills, 7 spells
+        </span><br>
+        <span sr-highlight="blue" ng-click="vm.setMagicPriority('B', 'Technomancer')">
+          Technomancer: Resonance 4, two Rating 4 Resonance Skills, 2 complex forms
+        </span><br>
+        <span sr-highlight="blue" ng-click="vm.setMagicPriority('B', 'Adept')">
+          Adept: Magic 6, one Rating 4 Active Skill
+        </span><br>
+        <span sr-highlight="blue" ng-click="vm.setMagicPriority('B', 'Aspected Magician')">
+          Aspected Magician: Magic 5, one Rating 4 Magical Skill group
+        </span><br>
         </td>
-      <td sr-highlight ng-click='setSkillsPriority("B")'>36/5</td>
-      <td sr-highlight ng-click='setResourcePriority("B")'>275,000</td>
+      <td sr-highlight="aqua" ng-click='vm.setSkillsPriority("B")'>36/5</td>
+      <td sr-highlight="aqua" ng-click='vm.setResourcePriority("B")'>275,000</td>
     </tr>
     <tr>
       <td>C</td>
-      <td sr-highlight ng-click='setMetatypePriority("C")'>Human (5)<br>
-          Elf (3)<br>
-          Dwarf (1)<br>
-          Ork (0)<br>
-        </td>
-      <td sr-highlight ng-click='setAttributesPriority("C")'>16</td>
-      <td sr-highlight ng-click='setMagicPriority("C")'>Magician or Mystic Adept: Magic 3, 5 spells<br>
-          Technomancer: Resonance 3, 1 complex forms<br>
-          Adept: Magic 4, one Rating 2 Active Skill<br>
-          Aspected Magician: Magic 3, one Rating 2 Magical Skill group<br>
-        </td>
-      <td sr-highlight ng-click='setSkillsPriority("C")'>28/2</td>
-      <td sr-highlight ng-click='setResourcePriority("C")'>140,000</td>
+      <td sr-highlight="aqua" ng-click='vm.setMetatypePriority("C")'>
+        Human (5)<br>
+        Elf (3)<br>
+        Dwarf (1)<br>
+        Ork (0)<br>
+      </td>
+      <td sr-highlight="aqua" ng-click='vm.setAttributesPriority("C")'>16</td>
+      <td sr-highlight="aqua">
+        <span sr-highlight="blue" ng-click="vm.setMagicPriority('C', 'Magician')">
+          Magician or Mystic Adept: Magic 3, 5 spells
+        </span><br>
+        <span sr-highlight="blue" ng-click="vm.setMagicPriority('C', 'Technomancer')">
+          Technomancer: Resonance 3, 1 complex forms
+        </span><br>
+        <span sr-highlight="blue" ng-click="vm.setMagicPriority('C', 'Adept')">
+          Adept: Magic 4, one Rating 2 Active Skill
+        </span><br>
+        <span sr-highlight="blue" ng-click="vm.setMagicPriority('C', 'Aspected Magician')">
+          Aspected Magician: Magic 3, one Rating 2 Magical Skill group
+        </span><br>
+      </td>
+      <td sr-highlight="aqua" ng-click='vm.setSkillsPriority("C")'>28/2</td>
+      <td sr-highlight="aqua" ng-click='vm.setResourcePriority("C")'>140,000</td>
     </tr>
     <tr>
       <td>D</td>
-      <td sr-highlight ng-click='setMetatypePriority("D")'>Human (3)<br>
+      <td sr-highlight="aqua" ng-click='vm.setMetatypePriority("D")'>Human (3)<br>
           Elf (0)
         </td>
-      <td sr-highlight ng-click='setAttributesPriority("D")'>14</td>
-      <td sr-highlight ng-click='setMagicPriority("D")'>
-        <span ng-click='setClass("Adept")'>Adept: Magic 2</span><br>
-        <span ng-click='setClass("Aspected Magician")'>Aspected Magician: Magic 2</span>
+      <td sr-highlight="aqua" ng-click='vm.setAttributesPriority("D")'>14</td>
+      <td sr-highlight="aqua">
+        <span sr-highlight="blue" ng-click="vm.setMagicPriority('D', 'Adept')">Adept: Magic 2</span><br>
+        <span sr-highlight="blue" ng-click="vm.setMagicPriority('D', 'Aspected Magician')">Aspected Magician: Magic 2</span>
       </td>
-      <td sr-highlight ng-click='setSkillsPriority("D")'>22/0</td>
-      <td sr-highlight ng-click='setResourcePriority("D")'>50,000</td>
+      <td sr-highlight="aqua" ng-click='vm.setSkillsPriority("D")'>22/0</td>
+      <td sr-highlight="aqua" ng-click='vm.setResourcePriority("D")'>50,000</td>
     </tr>
     <tr>
       <td>E</td>
-      <td sr-highlight ng-click='setMetatypePriority("E")'>Human (1)</td>
-      <td sr-highlight ng-click='setAttributesPriority("E")'>12</td>
-      <td sr-highlight ng-click='setMagicPriority("E")'>Mundane</td>
-      <td sr-highlight ng-click='setSkillsPriority("E")'>10/0</td>
-      <td sr-highlight ng-click='setResourcePriority("E")'>6,000</td>
+      <td sr-highlight="aqua" ng-click='vm.setMetatypePriority("E")'>Human (1)</td>
+      <td sr-highlight="aqua" ng-click='vm.setAttributesPriority("E")'>12</td>
+      <td sr-highlight="aqua">Mundane</td>
+      <td sr-highlight="aqua" ng-click='vm.setSkillsPriority("E")'>10/0</td>
+      <td sr-highlight="aqua" ng-click='vm.setResourcePriority("E")'>6,000</td>
     </tr>
   </tbody>
 </table>

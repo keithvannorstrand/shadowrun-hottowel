@@ -48,7 +48,6 @@
       if(!attrs.expanded) {
         content.style.border = '1px solid rgba(0,0,0,0)';
         var y = content.clientHeight;
-        console.log(y);
         content.style.border = 0;
         target.style.height = (y+5) + 'px';
       } else {

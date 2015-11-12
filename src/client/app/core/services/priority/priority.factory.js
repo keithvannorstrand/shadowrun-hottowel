@@ -19,6 +19,8 @@
       setMagic: setMagic,
       setResources: setResources,
       setMetatypes: setMetatypes,
+
+      getPriorities: getPriorities,
       getSkills: getSkills,
       getAttributes: getAttributes,
       getMagic: getMagic,
@@ -50,6 +52,7 @@
         case 'E': limits.skills = {single: 10, group: 0};
                   break;
       }
+      console.log('skills limits', limits.skills);
     }
 
     function setAttributes(priority){
@@ -67,32 +70,27 @@
       }
     }
 
-    /*
-      Not functional, right now this is relying on a class from a character
-      perhaps should limit what 'class' you can choose which will in turn limit
-      resonance or magic
-    */
-    function setMagic(priority){
+    function setMagic(priority, cl){
       switch(priority.toUpperCase()){
-        case 'A': if(character.class === 'Technomancer'){
+        case 'A': if(cl === 'Technomancer'){
                     setMinMagicAndResonance(0,6);
                   } else {
                     setMinMagicAndResonance(6,0);
                   }
                   break;
-        case 'B': if(character.class === 'Adept'){
+        case 'B': if(cl === 'Adept'){
                     setMinMagicAndResonance(6,0);
-                  } else if(character.class === 'Aspected Magician'){
+                  } else if(cl === 'Aspected Magician'){
                     setMinMagicAndResonance(5,0);
-                  } else if(character.class === 'Technomancer'){
+                  } else if(cl === 'Technomancer'){
                     setMinMagicAndResonance(0,4);
                   } else {
                     setMinMagicAndResonance(4,0);
                   }
                   break;
-        case 'C': if(character.class === 'Adept'){
+        case 'C': if(cl === 'Adept'){
                     setMinMagicAndResonance(4,0);
-                  } else if(character.class === 'Technomancer'){
+                  } else if(cl === 'Technomancer'){
                     setMinMagicAndResonance(0,3);
                   } else {
                     setMinMagicAndResonance(3,0);
@@ -103,6 +101,7 @@
         case 'E': setMinMagicAndResonance(0,0);
                   break;
       }
+      console.log('magic limits', limits.attributes.min);
     }
 
     function setResources(priority){
@@ -118,6 +117,7 @@
         case 'E': limits.resource = 6000;
                   break;
       }
+      console.log('resource limits', limits.resource);
     }
 
     function setMetatypes(priority){
@@ -150,6 +150,11 @@
                  {metatype: 'Human', limit:0}];
                   break;
       }
+      console.log('metatype limits', limits.metatypes);
+    }
+
+    function getPriorities(){
+      return priorities;
     }
 
     function getSkills(){
@@ -176,6 +181,7 @@
       limits.attributes.min.magic = magic;
       limits.attributes.min.resonance = resonance;
     }
-  }
+
+  } // ends priority factory
 
 })();

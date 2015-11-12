@@ -5,13 +5,13 @@
     .directive('srHighlight', highlightDirective);
 
   function highlightDirective(){
-    var highlight=false;
     return {
       restrict: 'A',
-      link: function(scope, elem, attr){
+      link: function(scope, elem, attrs){
+        var highlight=false;
         elem.bind('click', function(){
           if(!highlight){
-            elem.css('background', 'aqua');
+            elem.css('background', attrs.srHighlight);
           } else {
             elem.css('background', '');
           }
