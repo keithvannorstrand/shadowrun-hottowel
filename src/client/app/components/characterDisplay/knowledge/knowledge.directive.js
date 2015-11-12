@@ -32,7 +32,6 @@
     var vm = this;
 
     vm.editable = Boolean(vm.editable) || false;
-    console.log('editable', vm.editable);
     vm.knowledge = characterservice.getKnowledge();
 
     vm.deleteKnowledge = function(index){

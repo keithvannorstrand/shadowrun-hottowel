@@ -19,7 +19,6 @@
           return characterservice.getPersonalData();
         }, function(){
           ctrl.personalData = characterservice.getPersonalData();
-          console.log('data', ctrl.personalData);
         }, true);
       }
     };

@@ -24,7 +24,7 @@
   * 2 allowed to be 1 below max
   * any number 2 below max
   * accumulates total points spent and compares to limit
-  * seperate counter for magic/resonance skills\
+  * seperate counter for magic/resonance attributes
 * Qualities
   * dropdown of available qualities
     * positive

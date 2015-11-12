@@ -39,17 +39,14 @@
       character.attributes = attributes;
 
       calcAttributes();
-      console.log('attributes', character.attributes);
     }
 
     function setSkills(skills){
       character.skills = skills;
-      console.log('skills', character.skills);
     }
 
     function setKnowledge(knowledge){
       character.knowledge = knowledge;
-      console.log('knowledge', character.knowledge);
     }
 
     function setPersonalData(data){
@@ -57,7 +54,6 @@
 
       character.personalData.notoriety =
         (character.personalData.streetCred + character.personalData.publicAwareness) || 0;
-      // console.log('personal data', character.personalData);
     }
 
     function setMetatype(metatype){
@@ -66,17 +62,14 @@
 
     function setQualities(qualities){
       character.qualities = qualities;
-      console.log('qualities', character.qualities);
     }
 
     function setItems(items){
       character.items = items;
-      console.log('items', character.items);
     }
 
     function setCharacter(char){
       character = char;
-      console.log(character);
     }
 
     function setClass(cl){

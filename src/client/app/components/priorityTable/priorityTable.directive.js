@@ -32,22 +32,18 @@
 
     function setAttributesPriority(priority){
       priorityservice.setAttributes(priority);
-      console.log('attribute priority', priority);
     }
 
     function setSkillsPriority(priority){
       priorityservice.setSkills(priority);
-      console.log('skill priority', priority);
     }
 
     function setResourcePriority(priority){
       priorityservice.setResources(priority);
-      console.log('resource priority', priority);
     }
 
     function setMetatypePriority(priority){
       priorityservice.setMetatype(priority);
-      console.log('metatype priority', priority);
     }
 
   }
