@@ -19,6 +19,7 @@
       setMagic: setMagic,
       setResources: setResources,
       setMetatypes: setMetatypes,
+      setSpecial: setSpecial,
 
       getPriorities: getPriorities,
       getSkills: getSkills,
@@ -153,6 +154,10 @@
       console.log('metatype limits', limits.metatypes);
     }
 
+    function setSpecial(special){
+      limits.attributes.special = special;
+    }
+
     function getPriorities(){
       return priorities;
     }
@@ -176,6 +181,7 @@
     function getMetatypes(){
       return limits.metatypes;
     }
+
     // helper functions
     function setMinMagicAndResonance(magic, resonance){
       limits.attributes.min.magic = magic;

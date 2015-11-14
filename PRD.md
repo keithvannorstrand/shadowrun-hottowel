@@ -1,6 +1,5 @@
 ## Stories
-
-### Character Creation
+#### Character Creation
 * Priority table
   * click on each priority to select
     * should update behind the scenes limits
@@ -51,13 +50,13 @@
     * Knowledge Skills
 
 
-### Character Display
+#### Character Display
 * Dropdown of all characters available from the database
 * allows viewing of a RO character sheet
 * should be formatted similarly to [Shadowrun 5th Edition Character Sheet](http://cdn.shadowruntabletop.com/wp-content/uploads/Downloads/CAT27000_Shadowrun%205_CharacterSheet.pdf?b979cc)
 
 
-### GM assistance tool
+#### GM assistance tool
 * perhaps in the far future add video chat to enable long distance games (for me!)
 * save/load campaign
 * Allows selection of characters to take part in the campaign
@@ -72,7 +71,7 @@
       * need to research modifiers
     * can have lots of automation but allows for just inputing values if people want to roll physical die
 
-### Users
+#### Users
 * login / logout
 * guests can view all characters in RO display
 * users can view all characters in RO display
@@ -84,3 +83,21 @@
     * GM can add characters to their campaign
       * this allows the user associated with that character to view and participate in the campaign
 * MORE TBD
+
+## Backend
+
+#### Postgres
+* should convert from MongoDB over to a SQL database
+* use postgres and sequelize
+* tables  
+  * users
+  * characters
+  * skills
+    * active
+    * magic
+    * resonance
+    * complex forms
+    *
+  * qualities
+  * items
+    * add ons

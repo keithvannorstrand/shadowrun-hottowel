@@ -15,15 +15,22 @@
     };
   }
 
-  MetatypeController.$inject = ['characterservice'];
+  MetatypeController.$inject = ['$scope', 'characterservice','priorityservice'];
 
-  function MetatypeController(characterservice){
+  function MetatypeController($scope, characterservice, priorityservice){
     var vm = this;
-    // get metatypes available from the priority table
+    console.log(arguments);
+    vm.metatypes = priorityservice.getMetatypes();
     vm.metatype = 'Human';
     vm.saveOnChange = function(){
-      characterservice.setMetatype(vm.metatype);
+      characterservice.setMetatype(vm.metatype.metatype);
+      priorityservice.setSpecial(vm.metatype.limits);
     };
+    $scope.$watch(function(){
+      return priorityservice.getMetatypes();
+    }, function(newValue){
+      vm.metatypes = newValue;
+    })
   }
 
   function metatypeLink(scope, elem, attrs, ctrl){

@@ -1,8 +1,8 @@
 (function() {
   'use strict';
 
-  angular.module('app.components.dropdown')
-    .directive('srDropdown', dropdownDirective);
+  angular.module('app.components.characterDropdown')
+    .directive('srCharacterDropdown', dropdownDirective);
 
   dropdownDirective.$inject = ['characterservice'];
 

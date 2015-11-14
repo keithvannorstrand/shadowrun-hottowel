@@ -1,1 +1,4 @@
-<h2>This form needs to be a dropdown of the metatypes available from the priority table</h2>
+<select ng-model='vm.metatype'
+        ng-options='metatype as metatype.metatype for metatype in vm.metatypes'>
+  <pre>{{metatype}}</pre>
+</select>

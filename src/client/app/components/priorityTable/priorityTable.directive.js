@@ -43,7 +43,7 @@
     }
 
     function setMetatypePriority(priority){
-      priorityservice.setMetatype(priority);
+      priorityservice.setMetatypes(priority);
     }
 
   }

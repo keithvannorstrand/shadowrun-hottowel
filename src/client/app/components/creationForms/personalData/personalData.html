@@ -1,5 +1,8 @@
 <form>
-
+  <div>
+    <label for="metatype">Metatype</label>
+    <sr-metatype-form id="metatype"></sr-metatype-form>
+  </div>
   <div>
     <label for="character-alias">Alias</label>
     <input type="text" class="form-control" id="character-alias" placeholder="Big E" ng-model="vm.personalData.alias">
@@ -7,7 +10,8 @@
 
   <div>
     <label for="character-age">Age</label>
-    <input type="number" class="form-control" id="character-age" ng-model="vm.personalData.age">
+    <input type="number" id="character-age" ng-model="vm.personalData.age">
+    <div sr-incrementer="vm.personalData.age"></div>
   </div>
 
   <div>
