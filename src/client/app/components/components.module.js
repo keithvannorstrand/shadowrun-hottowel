@@ -10,6 +10,7 @@
     'app.components.saveCharacter',
     'app.components.characterDisplay',
     'app.components.characterDropdown',
-    'app.components.incrementer'
+    'app.components.incrementer',
+    
   ]);
 }());
