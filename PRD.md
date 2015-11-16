@@ -173,3 +173,11 @@
     * name (string, required)
     * availability (string, required)
     * type (string, required)
+* join tables
+  * skills => character
+  * qualities => character
+  * items => character
+  * attributes => character
+  * personalData => character
+  * character => user
+  * character => campaign
