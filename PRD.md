@@ -106,30 +106,40 @@
 * use postgres and sequelize
 * tables  
   * users
+    * relationships
+      * has many characters
+      * has many campaigns
+    * email (string, req)
   * characters
-    * connects all the other databases into a single character
-    * skills
-    * personal data
-    * qualities
-    * items
-    * attributes
+    * relationships
+      * has one user
+      * has many campaigns
+      * has many Skills
+      * has many Qualities
+      * has many items
+      * has one set of attributes
+      * has one set of personal data
   * personal data
-    * alias (string, required)
-    * metatype (string)
-    * age (number)
-    * height (number)
-    * weight (number)
-    * sex (string)
-    * ethnicity (string)
-    * street cred (number)
-    * public awareness (number)
-    * notoriety (number)
-    * memory (number)
-    * composure (number)
-    * judge intentions (number)
-    * walk speed (number)
-    * run speed (number)
+    * relationships
+      * belongs to one character
+    * alias (string, notnull, required)
+    * metatype (string, notnull, required)
+    * sex (string, required)
+    * ethnicity (string, required)
+    * age (number, required)
+    * height (number, required)
+    * weight (number, required)
+    * street cred (number, required)
+    * public awareness (number, required)
+    * notoriety (number, required)
+    * memory (number, required)
+    * composure (number, required)
+    * judge intentions (number, required)
+    * walk speed (number, required)
+    * run speed (number, required)
   * attributes
+    * relationships
+      * belongs to one character
     * strength (number, required)
     * agility (number, required)
     * reaction (number, required)
@@ -143,27 +153,22 @@
     * edge (number, required)
     * initiative (number, required)
     * astral initiative (number, required)
-  * items
-    * item id (required)
-    * quantity (number, required)
   * skills
-    * skill id (required)
-    * rank
-
-* RO tables
-  * all of the available skills/qualities ect for character creation
-  * skills
+    * relationships
+      * belongs to many characters
     * type (string, notnull, required)
     * name (string, notnull, required)
-    * group (string, required) {what skill group do i belong to?}
-  * skill groups {might be completely redundant}
-    * fills the need to be able to find skills by group
-    * type (string, notnull, required)
-    * members (array?, required)
+    * group (string, required)
   * qualities
-    * name (required, notnull)
-    * description (required, notnull)
+    * relationships
+      * belongs to many characters
+    * name (string, notnull, required)
+    * description (string, notnull, required)
+    * cost (numbers, required)
+    * type (string, required)
   * items
+    * relationships
+      * belongs to many characters
     * cost (number, required)
     * name (string, required)
     * availability (string, required)

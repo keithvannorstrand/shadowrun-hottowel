@@ -5,10 +5,10 @@
       .module('app.core.services.http')
       .factory('httpservice', httpservice);
 
-  httpservice.$inject = ['$http'/*, '$q', 'exception', 'logger'*/];
+  httpservice.$inject = ['$http'];
   /* @ngInject */
-  function httpservice($http/*, $q, exception, logger*/) {
-    var service = {
+  function httpservice($http) {
+    var factory = {
       postCharacter: postCharacter,
       getCharacters: getCharacters,
       deleteCharacter: deleteCharacter,
@@ -17,7 +17,7 @@
       updateUserCharacter: updateUserCharacter
     };
 
-    return service;
+    return factory;
 
 
     // mostly for dev testing, should be using saveUserCharacter
