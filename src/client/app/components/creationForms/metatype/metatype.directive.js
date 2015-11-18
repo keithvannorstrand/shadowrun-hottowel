@@ -21,10 +21,10 @@
     var vm = this;
     console.log(arguments);
     vm.metatypes = priorityservice.getMetatypes();
-    vm.metatype = 'Human';
+    vm.metatype = {metatype: 'Human', limit: 0};
     vm.saveOnChange = function(){
       characterservice.setMetatype(vm.metatype.metatype);
-      priorityservice.setSpecial(vm.metatype.limits);
+      priorityservice.setAttributeLimits(vm.metatype);
     };
     $scope.$watch(function(){
       return priorityservice.getMetatypes();

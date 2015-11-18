@@ -15,11 +15,11 @@
     var factory = {
       setPriorities: setPriorities,
       setSkills: setSkills,
+      setAttributeLimits: setAttributeLimits,
       setAttributes: setAttributes,
       setMagic: setMagic,
       setResources: setResources,
       setMetatypes: setMetatypes,
-      setSpecial: setSpecial,
 
       getPriorities: getPriorities,
       getSkills: getSkills,
@@ -54,6 +54,50 @@
                   break;
       }
       console.log('skills limits', limits.skills);
+    }
+
+    function setAttributeLimits(metatype){
+      defaultAttributeLimits();
+      limits.attributes.special = metatype.limit;
+      switch (metatype.metatype.toUpperCase()){
+        case 'HUMAN':
+          limits.attributes.min.edge = 2;
+          limits.attributes.min.edge = 7;
+          break;
+        case 'ELF':
+          limits.attributes.min.agility = 2;
+          limits.attributes.min.charisma = 3;
+          limits.attributes.max.agility = 7;
+          limits.attributes.max.charisma = 8;
+          break;
+        case 'DWARF':
+          limits.attributes.min.body = 3;
+          limits.attributes.min.strength = 3;
+          limits.attributes.min.will = 2;
+          limits.attributes.max.body = 8;
+          limits.attributes.max.strength = 8;
+          limits.attributes.max.reaction = 5;
+          limits.attributes.max.will = 7;
+          break;
+        case 'ORK':
+          limits.attributes.min.body = 4;
+          limits.attributes.min.strength = 3;
+          limits.attributes.max.body = 9;
+          limits.attributes.max.strength = 8;
+          limits.attributes.max.charisma = 5;
+          limits.attributes.max.logic = 7;
+          break;
+        case 'TROLL':
+          limits.attributes.min.body = 5;
+          limits.attributes.min.strength = 5;
+          limits.attributes.max.body = 10;
+          limits.attributes.max.strength = 10;
+          limits.attributes.max.agility = 5;
+          limits.attributes.max.charisma = 4;
+          limits.attributes.max.wisdom = 5;
+          limits.attributes.max.logic = 5;
+          break;
+      };
     }
 
     function setAttributes(priority){
@@ -154,10 +198,6 @@
       console.log('metatype limits', limits.metatypes);
     }
 
-    function setSpecial(special){
-      limits.attributes.special = special;
-    }
-
     function getPriorities(){
       return priorities;
     }
@@ -186,6 +226,34 @@
     function setMinMagicAndResonance(magic, resonance){
       limits.attributes.min.magic = magic;
       limits.attributes.min.resonance = resonance;
+    }
+
+    // FIXME: might be removing magic and resonance limits
+    function defaultAttributeLimits(){
+      limits.attributes.min= {
+        body: '1',
+        strength: '1',
+        agility: '1',
+        reaction: '1',
+        intuition: '1',
+        charisma: '1',
+        wisdom: '1',
+        logic: '1',
+        will: '1',
+        edge: '1'
+      };
+      limits.attributes.max= {
+        body: '6',
+        strength: '6',
+        agility: '6',
+        reaction: '6',
+        intuition: '6',
+        charisma: '6',
+        wisdom: '6',
+        logic: '6',
+        will: '6',
+        edge: '6'
+      };
     }
 
   } // ends priority factory

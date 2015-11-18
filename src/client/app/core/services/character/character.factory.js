@@ -37,7 +37,6 @@
     // exported functions
     function setAttributes(attributes){
       character.attributes = attributes;
-
       calcAttributes();
     }
 

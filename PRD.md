@@ -1,4 +1,4 @@
-## Stories
+## Front End
 #### Character Creation
 * Priority table
   * click on each priority to select
@@ -109,7 +109,7 @@
     * relationships
       * has many characters
       * has many campaigns
-    * email (string, req)
+    * email (string, required)
   * characters
     * relationships
       * has one user
@@ -181,3 +181,24 @@
   * personalData => character
   * character => user
   * character => campaign
+
+#### Routes
+* open routes (going to need docs to show how to use API, although should be simple)
+  * get all characters
+  * get all skills
+  * get all qualities
+  * get all items
+* user routes
+  * get single character
+  * create single character
+  * update single character
+  * delete single character
+* admin routes
+  * add new skill
+  * add new quality
+  * add new item
+  * add new user
+* auth routes
+  * log in
+  * log out
+  * register
