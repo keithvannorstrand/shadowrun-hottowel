@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(logger('dev'));
 
-app.use('/api', require('./routes/routes'));
+app.use('/api/v1', require('./routes/apiRoutes'));
 app.use('/local', require('./routes/localAuth'));
 app.use('/user', require('./routes/userRoutes'));
 

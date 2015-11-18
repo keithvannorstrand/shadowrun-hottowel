@@ -2,12 +2,17 @@ var router = require('express').Router();
 var four0four = require('../utils/404')();
 var mongoose = require('mongoose-q')(require('mongoose'), {spread:true});
 var Character = require('../models/character');
+var skills = require('../data/skills');
+var items = require('../data/items');
+var qualities = require('../data/qualities');
 
 router.get('/characters', getCharacters);
 router.delete('/character/:id', deleteCharacter);
 router.post('/character', postCharacter);
+router.get('/skills', getSkills);
+router.get('/qualities', getQualities);
+router.get('/items', getItems);
 router.get('/*', four0four.notFoundMiddleware);
-
 module.exports = router;
 
 //////////////
@@ -46,4 +51,16 @@ function postCharacter(req, res){
         message: 'Character couldn\'t be saved'
       });
     }).done();
+}
+
+function getSkills(req, res){
+  res.json(skills);
+}
+
+function getQualities(req, res){
+  res.json(qualities);
+}
+
+function getItems(req, res){
+  res.json(items);
 }
