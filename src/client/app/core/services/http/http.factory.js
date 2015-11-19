@@ -50,23 +50,20 @@
     }
 
     function getSkills() {
-      $http.get('/api/v1/skills')
-      .then(function(data){
-        console.log('skills', data);
-      });
+      return $http.get('/api/v1/skills');
     }
 
     function getQualities() {
       $http.get('/api/v1/qualities')
-      .then(function(data){
-        console.log('qualities', data);
+      .then(function(response){
+        console.log('qualities', response.data);
       });
     }
 
     function getItems() {
       $http.get('/api/v1/items')
-      .then(function(data){
-        console.log('items', data);
+      .then(function(response){
+        console.log('items', response.data);
       });
     }
   }

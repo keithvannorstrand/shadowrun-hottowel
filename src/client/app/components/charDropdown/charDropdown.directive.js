@@ -9,7 +9,7 @@
   function dropdownDirective(characterservice) {
     return {
       restrict: 'AE',
-      templateUrl: 'app/components/dropdown/dropdown.html',
+      templateUrl: 'app/components/charDropdown/charDropdown.html',
       scope: {},
       controller: DropdownController,
       controllerAs: 'vm',

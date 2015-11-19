@@ -10,6 +10,7 @@
             'blocks.router',
             'ui.router',
             'ngplus',
-            'app.core.services'
+            'app.core.services',
+            'app.core.filters'
         ]);
 })();

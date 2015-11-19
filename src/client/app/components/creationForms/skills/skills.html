@@ -1,15 +1,22 @@
-<form>
+<form ng-init="vm.activate()">
   <div>
-    <label for="skill-name">Skill</label>
-    <input type="text" class="form-control" id="skill-name" placeholder="Stealth" ng-model="vm.skill">
+    <label for="skill-type">Skill Type</label>
+    <select id="skill-type" ng-model="vm.type" ng-options="type for type in vm.types">
+      <pre>{{type}}</pre>
+    </select>
+  </div>
+  <div>
+    <label for="skill">Skill</label>
+    <select id="skill" ng-model="vm.skill" ng-options="skill as skill.name for skill in vm.skills | typefilter: vm.type">
+      <pre>{{skill}}</pre>
+    </select>
   </div>
   <div>
     <label for="skill-rank">Rank</label>
     <input type="number" class="form-control" id="skill-rank" ng-model="vm.rank" min="1" max="6">
   </div>
   <div>
-    <label>
-      <input type="checkbox" ng-model="vm.group">Skill Group?
-    </label>
+    <input type="checkbox" ng-model="vm.group">Skill Group
+  </div>
   <button type="submit" class="btn btn-default" ng-click="vm.addSkill()">Add Skill</button>
 </form>
