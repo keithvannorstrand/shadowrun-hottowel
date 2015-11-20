@@ -21,5 +21,4 @@
     var vm = this;
     vm.attributes = characterservice.getAttributes();
   }
-
 })();

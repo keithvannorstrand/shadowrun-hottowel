@@ -20,19 +20,19 @@
 
   function AttributesController(characterservice){
     var vm = this;
-    vm.attributes = {strength: 1};
-    vm.saveOnChange = function(){
-      characterservice.setAttributes(vm.attributes);
-    };
+    vm.attributes = characterservice.getAttributes();
+    // vm.saveOnChange = function(){
+    //   characterservice.setAttributes(vm.attributes);
+    // };
   }
 
 
   function attributesLink(scope, element, attributes, ctrl){
-    scope.$watch(function(){
-      return scope.vm.attributes;
-    }, function(newVal, oldVal){
-      ctrl.saveOnChange();
-    }, true);
+    // scope.$watch(function(){
+    //   return scope.vm.attributes;
+    // }, function(newVal, oldVal){
+    //   ctrl.saveOnChange();
+    // }, true);
   }
 
 })();

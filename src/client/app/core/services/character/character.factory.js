@@ -7,8 +7,23 @@
   function characterFactory(){
 
     var character = {
-      attributes: {},
-      personalData: {}
+      attributes: {
+        body: 1,
+        strength: 1,
+        agility: 1,
+        reaction: 1,
+        charisma: 1,
+        intuition: 1,
+        logic: 1,
+        will: 1,
+        magic: 0,
+        resonance: 0,
+        edge: 1
+      },
+      personalData: {},
+      items: [],
+      skills: [],
+      qualities: []
     };
 
     var factory = {
@@ -36,8 +51,10 @@
 
     // exported functions
     function setAttributes(attributes){
-      character.attributes = attributes;
-      calcAttributes();
+      if(attributes!=undefined){
+        character.attributes = attributes;
+        calcAttributes();
+      }
     }
 
     function setSkills(skills){
@@ -68,7 +85,7 @@
     }
 
     function setCharacter(char){
-      character = char;
+      angular.merge(character, char);
     }
 
     function setClass(cl){

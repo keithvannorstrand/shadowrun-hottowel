@@ -9,8 +9,8 @@
     'app.components.creationForms',
     'app.components.saveCharacter',
     'app.components.characterDisplay',
-    'app.components.characterDropdown',
+    'app.components.dropdowns.character',
     'app.components.incrementer',
-    
+
   ]);
 }());

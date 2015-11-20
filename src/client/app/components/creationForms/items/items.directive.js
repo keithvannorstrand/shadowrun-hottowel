@@ -19,7 +19,7 @@
 
   function ItemsFormController(characterservice){
     var vm = this;
-    vm.items = [];
+    vm.items = characterservice.getItems();
 
     vm.addItem = function(){
       vm.items.push({
@@ -27,7 +27,7 @@
         quantity: vm.quantity,
         cost: vm.cost
       });
-      characterservice.setItems(vm.items);
+      // characterservice.setItems(vm.items);
       vm.item = '';
       vm.quantity = 0;
       vm.cost = 0;

@@ -10,7 +10,7 @@
     return {
       restrict: 'E',
       scope: {
-        editable: '@?'
+        editable: '=?'
       },
       templateUrl: 'app/components/characterDisplay/items/items.html',
       controller: ItemsController,
@@ -30,6 +30,7 @@
 
   function ItemsController(characterservice){
     var vm = this;
+    console.log(vm.editable);
     vm.editable = Boolean(vm.editable) || false;
     vm.items = characterservice.getItems();
 

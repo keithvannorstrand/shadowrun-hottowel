@@ -20,18 +20,18 @@
 
   function DataFormController(characterservice){
     var vm = this;
-    vm.personalData = {};
-    vm.saveOnChange = function(){
-      characterservice.setPersonalData(vm.personalData);
-    };
+    vm.personalData = characterservice.getPersonalData();
+    // vm.saveOnChange = function(){
+    //   characterservice.setPersonalData(vm.personalData);
+    // };
   }
 
   function dataFormLink(scope, elem, attrs, ctrl){
-    scope.$watch(function(){
-      return scope.vm.personalData;
-    }, function(){
-      ctrl.saveOnChange();
-    }, true);
+    // scope.$watch(function(){
+    //   return scope.vm.personalData;
+    // }, function(){
+    //   ctrl.saveOnChange();
+    // }, true);
   }
 
 })();

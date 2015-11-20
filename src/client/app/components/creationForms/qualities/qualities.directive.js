@@ -20,11 +20,12 @@
   function QualitiesController(characterservice){
 
     var vm = this;
-    vm.qualities = [];
+    vm.qualities = characterservice.getQualities();
 
-    vm.addQuality = function(){
+    vm.addQuality = addQuality;
+    
+    function addQuality(){
       vm.qualities.push(vm.quality);
-      characterservice.setQualities(vm.qualities);
       vm.quality = '';
     };
 

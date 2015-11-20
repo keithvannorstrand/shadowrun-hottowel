@@ -22,6 +22,7 @@
     var vm = this;
     vm.types = ['Active', 'Knowledge', 'Magic'];
     vm.group = false;
+    vm.skills = characterservice.getSkills();
 
     vm.activate = activate;
     vm.addSkill = addSkill;
@@ -29,8 +30,8 @@
     function activate(){
       httpservice.getSkills()
         .then(function(response){
-          vm.skills = response.data;
-          console.log('skills', vm.skills);
+          vm.allSkills = response.data;
+          console.log('skills', vm.allSkills);
         })
     }
 
