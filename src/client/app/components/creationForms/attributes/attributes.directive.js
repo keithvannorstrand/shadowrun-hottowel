@@ -10,7 +10,6 @@
       templateUrl: 'app/components/creationForms/attributes/attributes.html',
       scope: {},
       controller: AttributesController,
-      link: attributesLink,
       controllerAs: 'vm',
       bindToController: true
     };
@@ -21,18 +20,5 @@
   function AttributesController(characterservice){
     var vm = this;
     vm.attributes = characterservice.getAttributes();
-    // vm.saveOnChange = function(){
-    //   characterservice.setAttributes(vm.attributes);
-    // };
   }
-
-
-  function attributesLink(scope, element, attributes, ctrl){
-    // scope.$watch(function(){
-    //   return scope.vm.attributes;
-    // }, function(newVal, oldVal){
-    //   ctrl.saveOnChange();
-    // }, true);
-  }
-
 })();

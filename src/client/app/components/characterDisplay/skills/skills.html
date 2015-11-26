@@ -3,6 +3,7 @@
     <thead>
       <tr>
         <th>Skills</th>
+        <th>Attribute</th>
         <th>Rank</th>
         <th>Group</th>
         <th ng-if="vm.editable"></th>
@@ -10,7 +11,8 @@
     </thead>
     <tbody>
       <tr ng-repeat="skill in vm.skills">
-        <td>{{skill.skill}}</td>
+        <td>{{skill.skill.name}}</td>
+        <td>{{skill.skill.attribute}}</td>
         <td>{{skill.rank}}</td>
         <td>
           <span ng-if="skill.group" class="glyphicon glyphicon-ok-circle"></span>

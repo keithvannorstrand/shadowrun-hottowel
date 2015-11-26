@@ -34,7 +34,12 @@ function deleteCharacter(req, res){
   // person logged in has access
   // GM can delete any from the game that they are running?
   // admin(me) can delete any character
-
+  Character.removeQ({_id: req.params.id})
+  .then(function(data){
+    res.json(data);
+  }).catch(function(err){
+    res.json({'message': err});
+  }).done();
 }
 
 function postCharacter(req, res){

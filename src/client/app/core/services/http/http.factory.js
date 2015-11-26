@@ -33,8 +33,9 @@
       return $http.get('/api/v1/characters');
     }
 
-    function deleteCharacter(id){
-      return $http.delete('/api/v1/character/'+id);
+    function deleteCharacter(character){
+      var id = character._id;
+      $http.delete('/api/v1/character/'+id);
     }
 
     function getUserCharacters(){
@@ -54,17 +55,11 @@
     }
 
     function getQualities() {
-      $http.get('/api/v1/qualities')
-      .then(function(response){
-        console.log('qualities', response.data);
-      });
+      return $http.get('/api/v1/qualities');
     }
 
     function getItems() {
-      $http.get('/api/v1/items')
-      .then(function(response){
-        console.log('items', response.data);
-      });
+      return $http.get('/api/v1/items');
     }
   }
 })();

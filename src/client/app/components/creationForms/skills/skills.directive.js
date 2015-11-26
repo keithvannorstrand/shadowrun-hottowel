@@ -20,7 +20,7 @@
   function SkillsController(characterservice, httpservice){
 
     var vm = this;
-    vm.types = ['Active', 'Knowledge', 'Magic'];
+    vm.types = ['Active', 'Social', 'Technical', 'Resonance', 'Magic', 'Vehicle', 'Knowledge'];
     vm.group = false;
     vm.skills = characterservice.getSkills();
 
@@ -37,15 +37,13 @@
 
     function addSkill(){
       console.log('skill',vm.skill);
-      // vm.skills.push({
-      //   skill: vm.skill,
-      //   rank: vm.rank,
-      //   group: vm.group
-      // });
-      // characterservice.setSkills(vm.skills);
-      // vm.skill = '';
-      // vm.rank = 0;
-      // vm.group = false;
+      vm.skills.push({
+        skill: vm.skill,
+        rank: vm.rank
+      });
+      vm.skill = '';
+      vm.rank = 0;
+      vm.group = false;
     };
   }
 

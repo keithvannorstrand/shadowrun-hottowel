@@ -51,7 +51,7 @@
 
     // exported functions
     function setAttributes(attributes){
-      if(attributes!=undefined){
+      if(attributes){
         character.attributes = attributes;
         calcAttributes();
       }
@@ -84,12 +84,12 @@
       character.items = items;
     }
 
-    function setCharacter(char){
-      angular.merge(character, char);
-    }
-
     function setClass(cl){
       character.class = cl;
+    }
+
+    function setCharacter(char){
+      angular.merge(character, char);
     }
 
     function getAttributes(){

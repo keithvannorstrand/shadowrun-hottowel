@@ -8,6 +8,7 @@
     'app.components.highlight',
     'app.components.creationForms',
     'app.components.saveCharacter',
+    'app.components.deleteCharacter',
     'app.components.characterDisplay',
     'app.components.dropdowns.character',
     'app.components.incrementer',

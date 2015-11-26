@@ -7,13 +7,14 @@
   </div>
   <div>
     <label for="skill">Skill</label>
-    <select id="skill" ng-model="vm.skill" ng-options="skill as skill.name for skill in vm.skills | typefilter: vm.type">
+    <select id="skill" ng-model="vm.skill" ng-options="skill as skill.name for skill in vm.allSkills | typefilter: vm.type">
       <pre>{{skill}}</pre>
     </select>
   </div>
   <div>
     <label for="skill-rank">Rank</label>
     <input type="number" class="form-control" id="skill-rank" ng-model="vm.rank" min="1" max="6">
+    <div sr-incrementer="vm.rank"></div>
   </div>
   <div>
     <input type="checkbox" ng-model="vm.group">Skill Group
