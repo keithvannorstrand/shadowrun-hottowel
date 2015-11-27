@@ -31,19 +31,14 @@
       httpservice.getSkills()
         .then(function(response){
           vm.allSkills = response.data;
-          console.log('skills', vm.allSkills);
         })
     }
 
     function addSkill(){
+      vm.skill.specialization = vm.spec;
+      vm.skill.rank = vm.rank;
       console.log('skill',vm.skill);
-      vm.skills.push({
-        skill: vm.skill,
-        rank: vm.rank
-      });
-      vm.skill = '';
-      vm.rank = 0;
-      vm.group = false;
+      vm.skills.push(vm.skill);
     };
   }
 

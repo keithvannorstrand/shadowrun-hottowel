@@ -13,8 +13,8 @@
     }
 
     var config = {
-        appErrorPrefix: '[shadowrun-hottowel Error] ',
-        appTitle: 'shadowrun-hottowel'
+        appErrorPrefix: '[Shadowrun Error] ',
+        appTitle: 'Shadowrun'
     };
 
     core.value('config', config);
