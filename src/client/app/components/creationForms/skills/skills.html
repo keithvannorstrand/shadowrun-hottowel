@@ -19,7 +19,7 @@
   </div>
   <div>
     <label for="skill-rank">Rank</label>
-    <input type="number" class="form-control" id="skill-rank" ng-model="vm.rank" min="1" max="6">
+    <input type="number" class="number-input" id="skill-rank" ng-model="vm.rank" min="1" max="6">
     <div sr-incrementer="vm.rank"></div>
   </div>
   <button type="submit" class="btn btn-default" ng-click="vm.addSkill()">Add Skill</button>

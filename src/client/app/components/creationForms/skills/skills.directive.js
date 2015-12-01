@@ -31,7 +31,7 @@
       httpservice.getSkills()
         .then(function(response){
           vm.allSkills = response.data;
-        })
+        });
     }
 
     function addSkill(){

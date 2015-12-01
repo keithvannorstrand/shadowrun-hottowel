@@ -62,7 +62,7 @@
       switch (metatype.metatype.toUpperCase()){
         case 'HUMAN':
           limits.attributes.min.edge = 2;
-          limits.attributes.min.edge = 7;
+          limits.attributes.max.edge = 7;
           break;
         case 'ELF':
           limits.attributes.min.agility = 2;
@@ -116,26 +116,27 @@
     }
 
     function setMagic(priority, cl){
+      cl = cl.toUpperCase();
       switch(priority.toUpperCase()){
-        case 'A': if(cl === 'Technomancer'){
+        case 'A': if(cl === 'TECHNOMANCER'){
                     setMinMagicAndResonance(0,6);
                   } else {
                     setMinMagicAndResonance(6,0);
                   }
                   break;
-        case 'B': if(cl === 'Adept'){
+        case 'B': if(cl === 'ADEPT'){
                     setMinMagicAndResonance(6,0);
-                  } else if(cl === 'Aspected Magician'){
+                  } else if(cl === 'ASPECTED MAGICIAN'){
                     setMinMagicAndResonance(5,0);
-                  } else if(cl === 'Technomancer'){
+                  } else if(cl === 'TECHNOMANCER'){
                     setMinMagicAndResonance(0,4);
                   } else {
                     setMinMagicAndResonance(4,0);
                   }
                   break;
-        case 'C': if(cl === 'Adept'){
+        case 'C': if(cl === 'ADEPT'){
                     setMinMagicAndResonance(4,0);
-                  } else if(cl === 'Technomancer'){
+                  } else if(cl === 'TECHNOMANCER'){
                     setMinMagicAndResonance(0,3);
                   } else {
                     setMinMagicAndResonance(3,0);
@@ -230,30 +231,36 @@
 
     // FIXME: might be removing magic and resonance limits
     function defaultAttributeLimits(){
-      limits.attributes.min= {
-        body: '1',
-        strength: '1',
-        agility: '1',
-        reaction: '1',
-        intuition: '1',
-        charisma: '1',
-        wisdom: '1',
-        logic: '1',
-        will: '1',
-        edge: '1'
+      var attrs = {};
+      attrs.min = {
+        body: 1,
+        strength: 1,
+        agility: 1,
+        reaction: 1,
+        intuition: 1,
+        charisma: 1,
+        wisdom: 1,
+        logic: 1,
+        will: 1,
+        magic: (limits.attributes.min.magic || 0),
+        resonance: (limits.attributes.min.resonance || 0),
+        edge: 1
       };
-      limits.attributes.max= {
-        body: '6',
-        strength: '6',
-        agility: '6',
-        reaction: '6',
-        intuition: '6',
-        charisma: '6',
-        wisdom: '6',
-        logic: '6',
-        will: '6',
-        edge: '6'
+      attrs.max = {
+        body: 6,
+        strength: 6,
+        agility: 6,
+        reaction: 6,
+        intuition: 6,
+        charisma: 6,
+        wisdom: 6,
+        logic: 6,
+        will: 6,
+        magic: 6,
+        resonance: 6,
+        edge: 6
       };
+      angular.merge(limits.attributes, attrs);
     }
 
   } // ends priority factory
