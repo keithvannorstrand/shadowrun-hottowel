@@ -1,4 +1,4 @@
-<form ng-init="vm.activate()">
+<form>
   <div>
     <label for="skill-type">Skill Type</label>
     <select id="skill-type" ng-model="vm.type" ng-options="type for type in vm.types">
@@ -22,5 +22,19 @@
     <input type="number" class="number-input" id="skill-rank" ng-model="vm.rank" min="1" max="6">
     <div sr-incrementer="vm.rank"></div>
   </div>
+
   <button type="submit" class="btn btn-default" ng-click="vm.addSkill()">Add Skill</button>
+
+  <div>
+    <div>
+      <span ng-class="{bred: vm.single > vm.limits.single}">
+        {{vm.single}} out of {{vm.limits.single}} single skill points spent
+      </span>
+    </div>
+    <div>
+      <span ng-class="{bred: vm.group > vm.limits.group}">
+        {{vm.group}} out of {{vm.limits.group}} group skill points spent
+      </span>
+    </div>
+  </div>
 </form>

@@ -9,6 +9,10 @@
       attributes: {
         min: {},
         max: {}
+      },
+      skills: {
+        single: 0,
+        group: 0
       }
     };
 
@@ -42,15 +46,20 @@
 
     function setSkills(priority){
       switch(priority.toUpperCase()){
-        case 'A': limits.skills = {single: 46, group: 10};
+        case 'A': limits.skills.single = 46;
+                  limits.skills.group = 10;
                   break;
-        case 'B': limits.skills = {single: 36, group: 5};
+        case 'B': limits.skills.single = 36;
+                  limits.skills.group = 5;
                   break;
-        case 'C': limits.skills = {single: 28, group: 2};
+        case 'C': limits.skills.single = 28;
+                  limits.skills.group = 2;
                   break;
-        case 'D': limits.skills = {single: 22, group: 0};
+        case 'D': limits.skills.single = 22;
+                  limits.skills.group = 0;
                   break;
-        case 'E': limits.skills = {single: 10, group: 0};
+        case 'E': limits.skills.single = 10;
+                  limits.skills.group = 0;
                   break;
       }
       console.log('skills limits', limits.skills);
@@ -200,7 +209,7 @@
     }
 
     function getPriorities(){
-      return priorities;
+      // return priorities;
     }
 
     function getSkills(){

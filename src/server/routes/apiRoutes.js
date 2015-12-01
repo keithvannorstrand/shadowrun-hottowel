@@ -45,7 +45,8 @@ function deleteCharacter(req, res){
 function postCharacter(req, res){
   var query={'personalData.alias': req.body.personalData.alias};
   var update = req.body;
-  var options = {upsert: true, new: true};
+  console.log(update);
+  var options = {upsert: true};
   Character.findOneAndUpdateQ(query, update, options)
     .then(function(data){
       res.json(data);

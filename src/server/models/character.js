@@ -34,10 +34,14 @@ var characterSchema = new Schema({
     resonance: Number,
     edge: Number
   },
-  activeSkills: [{
-    skill: String,
-    rank: Number,
-    group: Boolean
+  skills: [{
+    name: String,
+    attribute: String,
+    type: {type: String},
+    group: String,
+    default: Boolean,
+    specialization: String,
+    rank: Number
   }],
   qualities: [{
     quality: String
@@ -46,10 +50,6 @@ var characterSchema = new Schema({
     item: String,
     quantity: Number,
     cost: Number
-  }],
-  knowledge: [{
-    skill: String,
-    rank: Number
   }]
 });
 

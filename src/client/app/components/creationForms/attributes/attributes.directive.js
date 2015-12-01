@@ -22,90 +22,104 @@
     var vm = this;
     vm.attributes = characterservice.getAttributes();
     vm.limits = priorityservice.getAttributes();
-    console.log(vm.limits);
+    vm.spent = 0;
+    vm.special = 0;
   }
 
-  function linkFn(scope, elem, attrs, ctrl){
+  function linkFn(scope, elem, attrs, vm){
     scope.$watch(function(){
-      return ctrl.attributes;
+      return vm.attributes;
     }, function(){
-
-      if(ctrl.attributes.body > ctrl.limits.max.body){
-        ctrl.attributes.body = ctrl.limits.max.body;
+      if(vm.attributes.body > vm.limits.max.body){
+        vm.attributes.body = vm.limits.max.body;
       }
-      if(ctrl.attributes.body < ctrl.limits.min.body){
-        ctrl.attributes.body = ctrl.limits.min.body;
-      }
-
-      if(ctrl.attributes.strength > ctrl.limits.max.strength){
-        ctrl.attributes.strength = ctrl.limits.max.strength;
-      }
-      if(ctrl.attributes.strength < ctrl.limits.min.strength){
-        ctrl.attributes.strength = ctrl.limits.min.strength;
+      if(vm.attributes.body < vm.limits.min.body){
+        vm.attributes.body = vm.limits.min.body;
       }
 
-      if(ctrl.attributes.agility > ctrl.limits.max.agility){
-        ctrl.attributes.agility = ctrl.limits.max.agility;
+      if(vm.attributes.strength > vm.limits.max.strength){
+        vm.attributes.strength = vm.limits.max.strength;
       }
-      if(ctrl.attributes.agility < ctrl.limits.min.agility){
-        ctrl.attributes.agility = ctrl.limits.min.agility;
-      }
-
-      if(ctrl.attributes.reaction > ctrl.limits.max.reaction){
-        ctrl.attributes.reaction = ctrl.limits.max.reaction;
-      }
-      if(ctrl.attributes.reaction < ctrl.limits.min.reaction){
-        ctrl.attributes.reaction = ctrl.limits.min.reaction;
+      if(vm.attributes.strength < vm.limits.min.strength){
+        vm.attributes.strength = vm.limits.min.strength;
       }
 
-      if(ctrl.attributes.charisma > ctrl.limits.max.charisma){
-        ctrl.attributes.charisma = ctrl.limits.max.charisma;
+      if(vm.attributes.agility > vm.limits.max.agility){
+        vm.attributes.agility = vm.limits.max.agility;
       }
-      if(ctrl.attributes.charisma < ctrl.limits.min.charisma){
-        ctrl.attributes.charisma = ctrl.limits.min.charisma;
-      }
-
-      if(ctrl.attributes.intuition > ctrl.limits.max.intuition){
-        ctrl.attributes.intuition = ctrl.limits.max.intuition;
-      }
-      if(ctrl.attributes.intuition < ctrl.limits.min.intuition){
-        ctrl.attributes.intuition = ctrl.limits.min.intuition;
+      if(vm.attributes.agility < vm.limits.min.agility){
+        vm.attributes.agility = vm.limits.min.agility;
       }
 
-      if(ctrl.attributes.logic > ctrl.limits.max.logic){
-        ctrl.attributes.logic = ctrl.limits.max.logic;
+      if(vm.attributes.reaction > vm.limits.max.reaction){
+        vm.attributes.reaction = vm.limits.max.reaction;
       }
-      if(ctrl.attributes.logic < ctrl.limits.min.logic){
-        ctrl.attributes.logic = ctrl.limits.min.logic;
-      }
-
-      if(ctrl.attributes.will > ctrl.limits.max.will){
-        ctrl.attributes.will = ctrl.limits.max.will;
-      }
-      if(ctrl.attributes.will < ctrl.limits.min.will){
-        ctrl.attributes.will = ctrl.limits.min.will;
+      if(vm.attributes.reaction < vm.limits.min.reaction){
+        vm.attributes.reaction = vm.limits.min.reaction;
       }
 
-      if(ctrl.attributes.magic > ctrl.limits.max.magic){
-        ctrl.attributes.magic = ctrl.limits.max.magic;
+      if(vm.attributes.charisma > vm.limits.max.charisma){
+        vm.attributes.charisma = vm.limits.max.charisma;
       }
-      if(ctrl.attributes.magic < ctrl.limits.min.magic){
-        ctrl.attributes.magic = ctrl.limits.min.magic;
-      }
-
-      if(ctrl.attributes.resonance > ctrl.limits.max.resonance){
-        ctrl.attributes.resonance = ctrl.limits.max.resonance;
-      }
-      if(ctrl.attributes.resonance < ctrl.limits.min.resonance){
-        ctrl.attributes.resonance = ctrl.limits.min.resonance;
+      if(vm.attributes.charisma < vm.limits.min.charisma){
+        vm.attributes.charisma = vm.limits.min.charisma;
       }
 
-      if(ctrl.attributes.edge > ctrl.limits.max.edge){
-        ctrl.attributes.edge = ctrl.limits.max.edge;
+      if(vm.attributes.intuition > vm.limits.max.intuition){
+        vm.attributes.intuition = vm.limits.max.intuition;
       }
-      if(ctrl.attributes.edge < ctrl.limits.min.edge){
-        ctrl.attributes.edge = ctrl.limits.min.edge;
+      if(vm.attributes.intuition < vm.limits.min.intuition){
+        vm.attributes.intuition = vm.limits.min.intuition;
       }
+
+      if(vm.attributes.logic > vm.limits.max.logic){
+        vm.attributes.logic = vm.limits.max.logic;
+      }
+      if(vm.attributes.logic < vm.limits.min.logic){
+        vm.attributes.logic = vm.limits.min.logic;
+      }
+
+      if(vm.attributes.will > vm.limits.max.will){
+        vm.attributes.will = vm.limits.max.will;
+      }
+      if(vm.attributes.will < vm.limits.min.will){
+        vm.attributes.will = vm.limits.min.will;
+      }
+
+      if(vm.attributes.magic > vm.limits.max.magic){
+        vm.attributes.magic = vm.limits.max.magic;
+      }
+      if(vm.attributes.magic < vm.limits.min.magic){
+        vm.attributes.magic = vm.limits.min.magic;
+      }
+
+      if(vm.attributes.resonance > vm.limits.max.resonance){
+        vm.attributes.resonance = vm.limits.max.resonance;
+      }
+      if(vm.attributes.resonance < vm.limits.min.resonance){
+        vm.attributes.resonance = vm.limits.min.resonance;
+      }
+
+      if(vm.attributes.edge > vm.limits.max.edge){
+        vm.attributes.edge = vm.limits.max.edge;
+      }
+      if(vm.attributes.edge < vm.limits.min.edge){
+        vm.attributes.edge = vm.limits.min.edge;
+      }
+
+      vm.spent = (vm.attributes.body - vm.limits.min.body
+        + vm.attributes.strength - vm.limits.min.strength
+        + vm.attributes.reaction - vm.limits.min.reaction
+        + vm.attributes.agility - vm.limits.min.agility
+        + vm.attributes.charisma - vm.limits.min.charisma
+        + vm.attributes.intuition - vm.limits.min.intuition
+        + vm.attributes.logic - vm.limits.min.logic
+        + vm.attributes.will - vm.limits.min.will) || 0;
+
+      vm.special = (vm.attributes.magic - vm.limits.min.magic
+        + vm.attributes.resonance - vm.limits.min.resonance
+        + vm.attributes.edge - vm.limits.min.edge) || 0;
+
     }, true);
   }
 })();
