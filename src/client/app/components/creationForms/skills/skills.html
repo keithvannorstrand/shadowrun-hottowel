@@ -5,13 +5,22 @@
       <pre>{{type}}</pre>
     </select>
   </div>
-  <div>
+
+  <div ng-if="vm.type!='Group'">
     <label for="skill">Skill</label>
     <select id="skill" ng-model="vm.skill" ng-options="skill as skill.name for skill in vm.allSkills | typefilter: vm.type">
       <pre>{{skill}}</pre>
     </select>
   </div>
-  <div>
+
+  <div ng-if="vm.type=='Group'">
+    <label for="groups">Skill Groups</label>
+    <select id="groups" ng-model="vm.skillGroup" ng-options="group as group for (group, skills) in vm.skillGroups">
+      <pre>{{skill}}</pre>
+    </select>
+  </div>
+
+  <div ng-if="vm.type!='Group'">
     <label for="specializations">Specialization</label>
     <select id="specializations" ng-model="vm.spec" ng-options="spec for spec in vm.skill.specializations">
       <pre>{{spec}}</pre>
@@ -23,7 +32,8 @@
     <div sr-incrementer="vm.rank"></div>
   </div>
 
-  <button type="submit" class="btn btn-default" ng-click="vm.addSkill()">Add Skill</button>
+  <button type="submit" class="btn btn-default" ng-click="vm.addSkill()" ng-if="vm.type!='Group'">Add Skill</button>
+  <button type="submit" class="btn btn-default" ng-click="vm.addSkillGroup()" ng-if="vm.type=='Group'">Add Skill Group</button>
 
   <div>
     <div>

@@ -16,6 +16,7 @@
       saveUserCharacter: saveUserCharacter,
       updateUserCharacter: updateUserCharacter,
       getSkills: getSkills,
+      getSkillGroups: getSkillGroups,
       getItems: getItems,
       getQualities: getQualities
     };
@@ -52,6 +53,10 @@
 
     function getSkills() {
       return $http.get('/api/v1/skills');
+    }
+
+    function getSkillGroups() {
+      return $http.get('/api/v1/groups');
     }
 
     function getQualities() {

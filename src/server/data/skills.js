@@ -226,7 +226,7 @@ module.exports = [
     name: 'Leadership',
     attribute: 'Charisma',
     type: 'Social',
-    group: 'Inlfuence',
+    group: 'Influence',
     default: true,
     specializations: ['Command', 'Direct', 'Inspire', 'Rally']
   },
@@ -410,7 +410,7 @@ module.exports = [
     name: 'Biotechnology',
     attribute: 'Logic',
     type: 'Technical',
-    group: 'None',
+    group: 'Biotech',
     default: false,
     specializations: ['Bioinformatics', 'Bioware', 'Cloning', 'Gene Therapy', 'Vat Maintenance']
   },

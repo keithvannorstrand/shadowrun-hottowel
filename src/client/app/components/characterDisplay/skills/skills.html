@@ -6,20 +6,20 @@
         <th>Attribute</th>
         <th>Rank</th>
         <th>Specialization</th>
-        <!-- <th>Group</th> -->
+        <th>Group</th>
         <th ng-if="vm.editable"></th>
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="skill in vm.skills">
+      <tr ng-repeat="skill in vm.skills | orderBy: 'name'">
         <td>{{skill.name}}</td>
         <td>{{skill.attribute}}</td>
         <td>{{skill.rank}}</td>
         <td>{{skill.specialization}}</td>
-        <!-- <td>
-          <span ng-if="skill.group" class="glyphicon glyphicon-ok-circle"></span>
-          <span ng-if="!skill.group" class="glyphicon glyphicon-remove-circle"></span>
-        </td> -->
+        <td>
+          <span ng-if="!skill.group" class="glyphicon glyphicon-ok-circle"></span>
+          <span ng-if="skill.group" class="glyphicon glyphicon-remove-circle"></span>
+        </td>
         <td ng-if="vm.editable"><span ng-click="vm.deleteSkill($index)" class="glyphicon glyphicon-remove"></span></td>
       </tr>
     </tbody>

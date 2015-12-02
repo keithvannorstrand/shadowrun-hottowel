@@ -10,8 +10,10 @@ router.get('/characters', getCharacters);
 router.delete('/character/:id', deleteCharacter);
 router.post('/character', postCharacter);
 router.get('/skills', getSkills);
+router.get('/skill/:name', getSkill);
 router.get('/qualities', getQualities);
 router.get('/items', getItems);
+router.get('/groups', getSkillGroups);
 router.get('/*', four0four.notFoundMiddleware);
 module.exports = router;
 
@@ -63,10 +65,29 @@ function getSkills(req, res){
   res.json(skills);
 }
 
+function getSkill(req, res){
+  var name = req.params.name;
+  res.send('temp');
+}
+
 function getQualities(req, res){
   res.json(qualities);
 }
 
 function getItems(req, res){
   res.json(items);
+}
+
+function getSkillGroups(req, res){
+  var skillGroups = {};
+  skills.forEach(function(skill){
+    if(skill.group!=='None'){
+      if(skillGroups[skill.group]){
+        skillGroups[skill.group].push(skill);
+      } else {
+        skillGroups[skill.group] = new Array(skill);
+      }
+    }
+  });
+  res.json(skillGroups);
 }

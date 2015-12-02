@@ -23,18 +23,23 @@
   function SkillsController(characterservice, httpservice, priorityservice){
 
     var vm = this;
-    vm.types = ['Active', 'Social', 'Technical', 'Resonance', 'Magic', 'Vehicle', 'Knowledge'];
+    vm.types = ['Active', 'Social', 'Technical', 'Resonance', 'Magic', 'Vehicle', 'Knowledge', 'Group'];
+    vm.rank = 1;
 
     activate();
     vm.addSkill = addSkill;
+    vm.addSkillGroup = addSkillGroup;
 
     function activate(){
       vm.limits = priorityservice.getSkills();
       vm.skills = characterservice.getSkills();
-      console.log(vm.skills);
       httpservice.getSkills()
         .then(function(response){
           vm.allSkills = response.data;
+        });
+      httpservice.getSkillGroups()
+        .then(function(response){
+          vm.skillGroups = response.data;
         });
     }
 
@@ -42,8 +47,17 @@
       vm.skill.specialization = vm.spec;
       vm.skill.rank = vm.rank;
       vm.skills.push(vm.skill);
-      console.log('skill',vm.skills);
-    };
+      vm.skill = {};
+    }
+
+    function addSkillGroup(){
+      var skillGroup = {};
+      skillGroup.skills = vm.skillGroups[vm.skillGroup];
+      skillGroup.rank = vm.rank;
+      skillGroup.type = 'Group';
+      skillGroup.name = vm.skillGroup;
+      vm.skills.push(skillGroup);
+    }
   }
 
   function linkFn(scope, elem, attrs, vm){
@@ -52,12 +66,26 @@
     }, function(){
       if(vm.skills.length){
         vm.single = vm.skills.reduce(function(prev, cur){
-          if(cur.type.toLowerCase() != 'knowledge'){
+          var type = cur.type.toLowerCase();
+          if(type != 'knowledge' && type != 'group'){
+            if(cur.specialization)
+            {
+              return prev + cur.rank + 1;
+            }
             return prev + cur.rank;
           }
+          return prev;
+        }, 0);
+        vm.group = vm.skills.reduce(function(prev, cur){
+          var type = cur.type.toLowerCase();
+          if(type == 'group'){
+            return prev + cur.rank;
+          }
+          return prev;
         }, 0);
       } else {
         vm.single = 0;
+        vm.group = 0;
       }
     }, true)
   }
