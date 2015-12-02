@@ -41,7 +41,13 @@ var characterSchema = new Schema({
     group: String,
     default: Boolean,
     specialization: String,
-    rank: Number
+    rank: Number,
+    skills: [{
+      name: String,
+      attribute: String,
+      type: {type: String},
+      group: String
+    }]
   }],
   qualities: [{
     quality: String

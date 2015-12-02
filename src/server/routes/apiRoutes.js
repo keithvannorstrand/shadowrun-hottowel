@@ -3,7 +3,7 @@ var four0four = require('../utils/404')();
 var mongoose = require('mongoose-q')(require('mongoose'), {spread:true});
 var Character = require('../models/character');
 var skills = require('../data/skills');
-var items = require('../data/items');
+var weapons = require('../data/weapons');
 var qualities = require('../data/qualities');
 
 router.get('/characters', getCharacters);
@@ -12,7 +12,7 @@ router.post('/character', postCharacter);
 router.get('/skills', getSkills);
 router.get('/skill/:name', getSkill);
 router.get('/qualities', getQualities);
-router.get('/items', getItems);
+router.get('/weapons', getWeapons);
 router.get('/groups', getSkillGroups);
 router.get('/*', four0four.notFoundMiddleware);
 module.exports = router;
@@ -74,8 +74,8 @@ function getQualities(req, res){
   res.json(qualities);
 }
 
-function getItems(req, res){
-  res.json(items);
+function getWeapons(req, res){
+  res.json(weapons);
 }
 
 function getSkillGroups(req, res){

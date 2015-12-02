@@ -1,5 +1,3 @@
-// FIXME: have vm.types get set based on the different types that come from allSkills
-// FIXME: figure out setting up skill groups
 (function() {
   'use strict';
 
@@ -23,6 +21,7 @@
   function SkillsController(characterservice, httpservice, priorityservice){
 
     var vm = this;
+    // FIXME: should get this list from allSkills.type
     vm.types = ['Active', 'Social', 'Technical', 'Resonance', 'Magic', 'Vehicle', 'Knowledge', 'Group'];
     vm.rank = 1;
 
