@@ -4,9 +4,7 @@
   angular.module('app.components.characterDisplay.items')
     .directive('srItemsDisplay', displayDirective);
 
-  displayDirective.$inject = ['characterservice'];
-
-  function displayDirective(characterservice){
+  function displayDirective(){
     return {
       restrict: 'E',
       scope: {
@@ -15,14 +13,7 @@
       templateUrl: 'app/components/characterDisplay/items/items.html',
       controller: ItemsController,
       controllerAs: 'vm',
-      bindToController: true,
-      link: function(scope, elem, attrs, ctrl){
-        scope.$watch(function(){
-          return characterservice.getItems();
-        }, function(){
-          ctrl.items = characterservice.getItems();
-        });
-      }
+      bindToController: true
     };
   }
 
