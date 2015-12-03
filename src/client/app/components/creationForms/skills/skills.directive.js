@@ -22,7 +22,7 @@
 
     var vm = this;
     // FIXME: should get this list from allSkills.type
-    vm.types = ['Active', 'Social', 'Technical', 'Resonance', 'Magic', 'Vehicle', 'Knowledge', 'Group'];
+    // vm.types = ['Active', 'Social', 'Technical', 'Resonance', 'Magic', 'Vehicle', 'Knowledge', 'Group'];
     vm.rank = 1;
 
     activate();
@@ -35,6 +35,12 @@
       httpservice.getSkills()
         .then(function(response){
           vm.allSkills = response.data;
+          vm.types = vm.allSkills.map(function(skill) {
+            return skill.type;
+          }).filter(function(type, index, array) {
+            return array.indexOf(type)==index;
+          });
+          vm.types.push('Group');
         });
       httpservice.getSkillGroups()
         .then(function(response){

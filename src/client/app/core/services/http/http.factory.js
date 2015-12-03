@@ -18,6 +18,7 @@
       getSkills: getSkills,
       getSkillGroups: getSkillGroups,
       getItems: getItems,
+      getWeapons: getWeapons,
       getQualities: getQualities
     };
 
@@ -59,12 +60,16 @@
       return $http.get('/api/v1/groups');
     }
 
-    function getQualities() {
-      return $http.get('/api/v1/qualities');
-    }
-
     function getItems() {
       return $http.get('/api/v1/items');
+    }
+
+    function getWeapons() {
+      return $http.get('/api/v1/weapons');
+    }
+
+    function getQualities() {
+      return $http.get('/api/v1/qualities');
     }
   }
 })();

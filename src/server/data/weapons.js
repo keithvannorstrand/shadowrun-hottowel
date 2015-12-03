@@ -206,42 +206,42 @@ module.exports =[
     cost: 550,
     conceal: '0'
   },
-  {
-    type: 'Projectile Weapon',
-    name: 'Bow',
-    skill: 'Archery',
-    accuracy: '6',
-    range: 'Rating',
-    damage: '(Rating+2)P',
-    ap: '-(Rating/4)',
-    avail: 'Rating',
-    cost: 'Rating*100',
-    conceal: '+8'
-  },
-  {
-    type: 'Projectile Weapon',
-    name: 'Arrow',
-    skill: 'Archery',
-    accuracy: '-',
-    range: ['0-STR','STR-STR*10','STR*10-STR*30','STR*30-STR*60'],
-    damage: '-',
-    ap: '-',
-    avail: 'Rating',
-    cost: 'Rating*2',
-    conceal: '+8'
-  },
-  {
-    type: 'Projectile Weapon',
-    name: 'Injection Arrow',
-    skill: 'Archery',
-    accuracy: '-',
-    range: '-',
-    damage: '-',
-    ap: '-',
-    avail: '(Rating+2)R',
-    cost: 'Rating*20',
-    conceal: '+8'
-  },
+  // {
+  //   type: 'Projectile Weapon',
+  //   name: 'Bow',
+  //   skill: 'Archery',
+  //   accuracy: '6',
+  //   range: 'Rating',
+  //   damage: '(Rating+2)P',
+  //   ap: '-(Rating/4)',
+  //   avail: 'Rating',
+  //   cost: 'Rating*100',
+  //   conceal: '+8'
+  // },
+  // {
+  //   type: 'Projectile Weapon',
+  //   name: 'Arrow',
+  //   skill: 'Archery',
+  //   accuracy: '-',
+  //   range: ['0-STR','STR-STR*10','STR*10-STR*30','STR*30-STR*60'],
+  //   damage: '-',
+  //   ap: '-',
+  //   avail: 'Rating',
+  //   cost: 'Rating*2',
+  //   conceal: '+8'
+  // },
+  // {
+  //   type: 'Projectile Weapon',
+  //   name: 'Injection Arrow',
+  //   skill: 'Archery',
+  //   accuracy: '-',
+  //   range: '-',
+  //   damage: '-',
+  //   ap: '-',
+  //   avail: '(Rating+2)R',
+  //   cost: 'Rating*20',
+  //   conceal: '+8'
+  // },
   {
     type: 'Projectile Weapon',
     name: 'Light Crossbow',
@@ -793,7 +793,7 @@ module.exports =[
   },
   {
     type: 'Sniper Rifles',
-    name: 'Ares Deset Strike',
+    name: 'Ares Desert Strike',
     skill: 'Longarms',
     accuracy: '7',
     range: ['0-50','51-350','351-800','801-1500'],
@@ -1049,7 +1049,7 @@ module.exports =[
     name: 'Flash-bang',
     damage: '10S',
     ap: '-4',
-    blast: '10m Radius'
+    blast: '10m Radius',
     avail: '6R',
     cost: 100
   },

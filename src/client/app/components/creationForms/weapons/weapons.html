@@ -1,1 +1,30 @@
-<h1>WEAPONS GO</h1>
+<form>
+  <div>
+    <label for="weapon-type">Weapon Type</label>
+    <select id="weapon-type" ng-model="vm.type" ng-options="type for type in vm.types">
+      <pre>{{type}}</pre>
+    </select>
+  </div>
+
+  <div>
+    <label for="weapon">Weapon</label>
+    <select id="weapon" ng-model="vm.weapon"
+      ng-options="weapon as weapon.name for weapon in vm.allWeapons | typefilter: vm.type">
+      <pre>{{type}}</pre>
+    </select>
+  </div>
+
+  <div>
+    <label for="weap-quantity">Quantity</label>
+    <input type="number" class="number-input" id="weap-quantity" ng-model="vm.quantity">
+    <div sr-incrementer="vm.quantity"></div>
+  </div>
+
+  <button class="btn btn-default" ng-click="vm.addWeapon()">Add Weapon</button>
+
+  <div>
+    <span ng-class="{bred: vm.resource > vm.limit.resource}">
+      {{vm.resource}} out of {{vm.limit.resource}} nuyen spent
+    </span>
+  </div>
+</form>

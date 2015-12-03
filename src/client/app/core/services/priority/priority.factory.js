@@ -225,7 +225,7 @@
     }
 
     function getResources(){
-      return limits.resource;
+      return limits;
     }
 
     function getMetatypes(){
@@ -238,7 +238,6 @@
       limits.attributes.min.resonance = resonance;
     }
 
-    // FIXME: might be removing magic and resonance limits
     function defaultAttributeLimits(){
       var attrs = {};
       attrs.min = {
