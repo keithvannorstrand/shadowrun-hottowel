@@ -1,6 +1,7 @@
 // FIXME: need to add exotic ranged weapons
 // FIXME: need to add weapon accessories
 // FIXME: need to add weapon accessory slots to weapons
+// FIXME: deal with bow rating
 module.exports =[
   {
     type: 'Melee Weapon',
@@ -10,7 +11,8 @@ module.exports =[
     reach: '2',
     damage: '(STR + 5)P',
     ap: '-4',
-    avail: '12R',
+    avail: 12,
+    illegality: 'R',
     cost: 4000,
     conceal: '+6'
   },
@@ -22,7 +24,7 @@ module.exports =[
     reach: '0',
     damage: '(STR + 2)P',
     ap: '-3',
-    avail: '4',
+    avail: 4,
     cost: 300,
     conceal: '0'
   },
@@ -34,7 +36,8 @@ module.exports =[
     reach: '0',
     damage: '(STR + 2)P',
     ap: '-2',
-    avail: '7R',
+    avail: 7,
+    illegality: 'R',
     cost: 200,
     conceal: '-4'
   },
@@ -46,7 +49,8 @@ module.exports =[
     reach: '1',
     damage: '(STR + 3)P',
     ap: '-3',
-    avail: '9R',
+    avail: 9,
+    illegality: 'R',
     cost: 1000,
     conceal: '+6'
   },
@@ -58,7 +62,7 @@ module.exports =[
     reach: '0',
     damage: '(STR + 1)P',
     ap: '-1',
-    avail: '0',
+    avail: 0,
     cost: 10,
     conceal: '-2'
   },
@@ -70,7 +74,8 @@ module.exports =[
     reach: '3',
     damage: '(STR + 3)P',
     ap: '-2',
-    avail: '6R',
+    avail: 6,
+    illegality: 'R',
     cost: 1000,
     conceal: '+10'
   },
@@ -82,7 +87,7 @@ module.exports =[
     reach: '0',
     damage: '(STR + 2)P',
     ap: '-2',
-    avail: '0',
+    avail: 0,
     cost: 100,
     conceal: '-2'
   },
@@ -94,7 +99,8 @@ module.exports =[
     reach: '1',
     damage: '(STR + 3)P',
     ap: '-2',
-    avail: '5R',
+    avail: 5,
+    illegality: 'R',
     cost: 500,
     conceal: '+6'
   },
@@ -106,7 +112,7 @@ module.exports =[
     reach: '1',
     damage: '(STR + 3)P',
     ap: '0',
-    avail: '0',
+    avail: 0,
     cost: 30,
     conceal: '+2'
   },
@@ -118,7 +124,7 @@ module.exports =[
     reach: '1',
     damage: '(STR + 2)P',
     ap: '0',
-    avail: '4',
+    avail: 4,
     cost: 100,
     conceal: '+2'
   },
@@ -130,7 +136,7 @@ module.exports =[
     reach: '0',
     damage: '(STR + 2)P',
     ap: '0',
-    avail: '2',
+    avail: 2,
     cost: 30,
     conceal: '-2'
   },
@@ -142,7 +148,7 @@ module.exports =[
     reach: '2',
     damage: '(STR + 3)P',
     ap: '0',
-    avail: '3',
+    avail: 3,
     cost: 100,
     conceal: '+10'
   },
@@ -154,7 +160,8 @@ module.exports =[
     reach: '1',
     damage: '9S',
     ap: '-5',
-    avail: '6R',
+    avail: 6,
+    illegality: 'R',
     cost: 750,
     conceal: '+2'
   },
@@ -166,7 +173,7 @@ module.exports =[
     reach: '2',
     damage: '(STR + 2)P',
     ap: '0',
-    avail: '4',
+    avail: 4,
     cost: 350,
     conceal: '+10'
   },
@@ -178,7 +185,8 @@ module.exports =[
     reach: '0',
     damage: '(STR + 1)P',
     ap: '0',
-    avail: '2R',
+    avail: 2,
+    illegality: 'R',
     cost: 100,
     conceal: '-2'
   },
@@ -190,7 +198,8 @@ module.exports =[
     reach: '2',
     damage: '12P',
     ap: '-8',
-    avail: '12F',
+    avail: 12,
+    illegality: 'F',
     cost: 10000,
     conceal: '-4'
   },
@@ -202,7 +211,8 @@ module.exports =[
     reach: '0',
     damage: '8S',
     ap: '-5',
-    avail: '6R',
+    avail: 6,
+    illegality: 'R',
     cost: 550,
     conceal: '0'
   },
@@ -250,7 +260,7 @@ module.exports =[
     range: ['0-6','7-24','25-60','61-120'],
     damage: '5P',
     ap: '-1',
-    avail: '2',
+    avail: 2,
     cost: 300,
     conceal: '+6'
   },
@@ -262,7 +272,8 @@ module.exports =[
     range: ['0-9','10-36','37-90','91-150'],
     damage: '7P',
     ap: '-2',
-    avail: '4R',
+    avail: 4,
+    illegality: 'R',
     cost: 500,
     conceal: '+8'
   },
@@ -274,7 +285,8 @@ module.exports =[
     range: ['0-15','16-45','46-120','121-180'],
     damage: '10P',
     ap: '-3',
-    avail: '8R',
+    avail: 8,
+    illegality: 'R',
     cost: 1000,
     conceal: '+8'
   },
@@ -286,7 +298,7 @@ module.exports =[
     range: '-',
     damage: '-',
     ap: '-',
-    avail: '2',
+    avail: 2,
     cost: 5,
     conceal: '0'
   },
@@ -298,7 +310,8 @@ module.exports =[
     range: '-',
     damage: '-',
     ap: '-',
-    avail: '8R',
+    avail: 8,
+    illegality: 'R',
     cost: 50,
     conceal: '0'
   },
@@ -310,7 +323,8 @@ module.exports =[
     range: ['0-STR','to STR*2','to STR*3','to STR*5'],
     damage: '(STR+1)P',
     ap: '-1',
-    avail: '4R',
+    avail: 4,
+    illegality: 'R',
     cost: 25,
     conceal: '-2'
   },
@@ -322,7 +336,8 @@ module.exports =[
     range: ['0-STR','to STR*2','to STR*5','to STR*7'],
     damage: '(STR+1)P',
     ap: '-1',
-    avail: '4R',
+    avail: 4,
+    illegality: 'R',
     cost: 25,
     conceal: '-2'
   },
@@ -337,7 +352,7 @@ module.exports =[
     mode: 'SS',
     rc: '-',
     ammo: '4(m)',
-    avail: '-',
+    avail: 0,
     cost: 250,
     conceal: '-2'
   },
@@ -352,7 +367,7 @@ module.exports =[
     mode: 'SA',
     rc: '-',
     ammo: '4(m)',
-    avail: '-',
+    avail: 0,
     cost: 180,
     conceal: '-2'
   },
@@ -367,7 +382,8 @@ module.exports =[
     mode: 'SA',
     rc: '-',
     ammo: '4(c)',
-    avail: '5R',
+    avail: 5,
+    illegality: 'R',
     cost: 1000,
     conceal: '-4'
   },
@@ -382,7 +398,8 @@ module.exports =[
     mode: 'SA',
     rc: '-',
     ammo: '6(c)',
-    avail: '4R',
+    avail: 4,
+    illegality: 'R',
     cost: 120,
     conceal: '-4'
   },
@@ -397,7 +414,8 @@ module.exports =[
     mode: 'SS/BF',
     rc: '-',
     ammo: '2(b)',
-    avail: '4R',
+    avail: 4,
+    illegality: 'R',
     cost: 180,
     conceal: '-4'
   },
@@ -412,7 +430,8 @@ module.exports =[
     mode: 'SA',
     rc: '-',
     ammo: '16(c)',
-    avail: '6F',
+    avail: 6,
+    illegality: 'F',
     cost: 1250,
     conceal: '-2'
   },
@@ -427,7 +446,8 @@ module.exports =[
     mode: 'SA',
     rc: '-',
     ammo: '16(c)',
-    avail: '3R',
+    avail: 3,
+    illegality: 'R',
     cost: 200,
     conceal: '-2'
   },
@@ -442,7 +462,8 @@ module.exports =[
     mode: 'SA/BF',
     rc: '(1)',
     ammo: '21(c)',
-    avail: '7R',
+    avail: 7,
+    illegality: 'R',
     cost: 210,
     conceal: '-2'
   },
@@ -457,7 +478,8 @@ module.exports =[
     mode: 'SA',
     rc: '-',
     ammo: '11(c)',
-    avail: '4R',
+    avail: 4,
+    illegality: 'R',
     cost: 320,
     conceal: '-2'
   },
@@ -472,7 +494,8 @@ module.exports =[
     mode: 'SA',
     rc: '(1)',
     ammo: '30(c)',
-    avail: '6R',
+    avail: 6,
+    illegality: 'R',
     cost: 350,
     conceal: '-2'
   },
@@ -487,7 +510,8 @@ module.exports =[
     mode: 'SA/SS',
     rc: '-',
     ammo: '6(cy)',
-    avail: '3R',
+    avail: 3,
+    illegality: 'R',
     cost: 300,
     conceal: '-2'
   },
@@ -502,7 +526,8 @@ module.exports =[
     mode: 'SA',
     rc: '-',
     ammo: '15(c)',
-    avail: '5R',
+    avail: 5,
+    illegality: 'R',
     cost: 725,
     conceal: '0'
   },
@@ -517,7 +542,8 @@ module.exports =[
     mode: 'SA/BF',
     rc: '-',
     ammo: '30(c)',
-    avail: '8F',
+    avail: 8,
+    illegality: 'F',
     cost: 380,
     conceal: '0'
   },
@@ -532,7 +558,8 @@ module.exports =[
     mode: 'SA',
     rc: '-',
     ammo: '10(c)',
-    avail: '4R',
+    avail: 4,
+    illegality: 'R',
     cost: 640,
     conceal: '0'
   },
@@ -547,7 +574,8 @@ module.exports =[
     mode: 'SA',
     rc: '-',
     ammo: '14(c)',
-    avail: '7R',
+    avail: 7,
+    illegality: 'R',
     cost: 425,
     conceal: '0'
   },
@@ -562,7 +590,8 @@ module.exports =[
     mode: 'SA',
     rc: '-',
     ammo: '8(m)',
-    avail: '6R',
+    avail: 6,
+    illegality: 'R',
     cost: 250,
     conceal: '0'
   },
@@ -577,7 +606,8 @@ module.exports =[
     mode: 'SS',
     rc: '-',
     ammo: '6(cy)',
-    avail: '4R',
+    avail: 4,
+    illegality: 'R',
     cost: 400,
     conceal: '0'
   },
@@ -592,7 +622,8 @@ module.exports =[
     mode: 'SA/BF',
     rc: '2',
     ammo: '40(c)',
-    avail: '9R',
+    avail: 9,
+    illegality: 'R',
     cost: 830,
     conceal: '0'
   },
@@ -607,7 +638,8 @@ module.exports =[
     mode: 'SA/BF',
     rc: '(1)',
     ammo: '35(c)',
-    avail: '6R',
+    avail: 6,
+    illegality: 'R',
     cost: 270,
     conceal: '0'
   },
@@ -622,7 +654,8 @@ module.exports =[
     mode: 'SA/BF/FA',
     rc: '-',
     ammo: '30(c)',
-    avail: '8R',
+    avail: 8,
+    illegality: 'R',
     cost: 350,
     conceal: '0'
   },
@@ -637,7 +670,8 @@ module.exports =[
     mode: 'SA/BF/FA',
     rc: '2(3)',
     ammo: '32(c)',
-    avail: '5R',
+    avail: 5,
+    illegality: 'R',
     cost: 660,
     conceal: '+2'
   },
@@ -652,7 +686,8 @@ module.exports =[
     mode: 'SA/BF/FA',
     rc: '1(2)',
     ammo: '50(c)',
-    avail: '11F',
+    avail: 11,
+    illegality: 'F',
     cost: 900,
     conceal: '+2'
   },
@@ -667,7 +702,8 @@ module.exports =[
     mode: 'SA/BF/FA',
     rc: '(1)',
     ammo: '28(c)',
-    avail: '8R',
+    avail: 8,
+    illegality: 'R',
     cost: 730,
     conceal: '+2'
   },
@@ -682,7 +718,8 @@ module.exports =[
     mode: 'BF/FA',
     rc: '2',
     ammo: '32(c)',
-    avail: '6R',
+    avail: 6,
+    illegality: 'R',
     cost: 800,
     conceal: '+2'
   },
@@ -697,7 +734,8 @@ module.exports =[
     mode: 'SA/BF',
     rc: '(1)',
     ammo: '30(c)',
-    avail: '6R',
+    avail: 6,
+    illegality: 'R',
     cost: 875,
     conceal: '+2'
   },
@@ -712,7 +750,8 @@ module.exports =[
     mode: 'BF',
     rc: '(1)',
     ammo: '24(c)',
-    avail: '4R',
+    avail: 4,
+    illegality: 'R',
     cost: 450,
     conceal: '+2'
   },
@@ -727,7 +766,8 @@ module.exports =[
     mode: 'SA/BF/FA',
     rc: '-',
     ammo: '38(c)',
-    avail: '4R',
+    avail: 4,
+    illegality: 'R',
     cost: 950,
     conceal: '+6'
   },
@@ -742,7 +782,8 @@ module.exports =[
     mode: 'SA/BF/FA',
     rc: '2',
     ammo: '42(c)',
-    avail: '11F',
+    avail: 11,
+    illegality: 'F',
     cost: 2650,
     conceal: '+6'
   },
@@ -757,7 +798,8 @@ module.exports =[
     mode: 'SA/BF/FA',
     rc: '-',
     ammo: '40(c)',
-    avail: '4R',
+    avail: 4,
+    illegality: 'R',
     cost: 550,
     conceal: '+6'
   },
@@ -772,7 +814,8 @@ module.exports =[
     mode: 'SA/BF/FA',
     rc: '2',
     ammo: '35(c)',
-    avail: '8R',
+    avail: 8,
+    illegality: 'R',
     cost: 1500,
     conceal: '+6'
   },
@@ -787,7 +830,8 @@ module.exports =[
     mode: 'BF/FA',
     rc: '1',
     ammo: '60(c)',
-    avail: '14F',
+    avail: 14,
+    illegality: 'F',
     cost: 2600,
     conceal: '+6'
   },
@@ -802,7 +846,8 @@ module.exports =[
     mode: 'SA',
     rc: '(1)',
     ammo: '14(c)',
-    avail: '10F',
+    avail: 10,
+    illegality: 'F',
     cost: 17500,
     conceal: '+8'
   },
@@ -817,7 +862,8 @@ module.exports =[
     mode: 'SA/BF',
     rc: '(1)',
     ammo: '20(c)',
-    avail: '12F',
+    avail: 12,
+    illegality: 'F',
     cost: 10300,
     conceal: '+8'
   },
@@ -832,7 +878,8 @@ module.exports =[
     mode: 'SA',
     rc: '(1)',
     ammo: '15(c)',
-    avail: '16F',
+    avail: 16,
+    illegality: 'F',
     cost: 28000,
     conceal: '+8'
   },
@@ -847,7 +894,8 @@ module.exports =[
     mode: 'SS',
     rc: '-',
     ammo: '5(m)',
-    avail: '4R',
+    avail: 4,
+    illegality: 'R',
     cost: 2100,
     conceal: '+8'
   },
@@ -862,7 +910,8 @@ module.exports =[
     mode: 'SA',
     rc: '(1)',
     ammo: '8(m)',
-    avail: '4R',
+    avail: 4,
+    illegality: 'R',
     cost: 1300,
     conceal: '+8'
   },
@@ -877,7 +926,8 @@ module.exports =[
     mode: 'SS/BF',
     rc: '-',
     ammo: '5(m)',
-    avail: '4R',
+    avail: 4,
+    illegality: 'R',
     cost: 450,
     conceal: '+6'
   },
@@ -892,7 +942,8 @@ module.exports =[
     mode: 'SA/BF',
     rc: '-',
     ammo: '10(c) or 24(d)',
-    avail: '12F',
+    avail: 12,
+    illegality: 'F',
     cost: 1100,
     conceal: '+6'
   },
@@ -907,7 +958,8 @@ module.exports =[
     mode: 'SS',
     rc: '(1)',
     ammo: '2(b)',
-    avail: '9R',
+    avail: 9,
+    illegality: 'R',
     cost: 1000,
     conceal: '+6'
   },
@@ -922,7 +974,8 @@ module.exports =[
     mode: 'BF/FA',
     rc: '2(3)',
     ammo: '50(c) or 100(belt)',
-    avail: '12F',
+    avail: 12,
+    illegality: 'F',
     cost: 5800,
     conceal: '+10'
   },
@@ -937,7 +990,8 @@ module.exports =[
     mode: 'FA',
     rc: '-',
     ammo: '50(c) or 100(belt)',
-    avail: '12F',
+    avail: 12,
+    illegality: 'F',
     cost: 7000,
     conceal: '+10'
   },
@@ -952,7 +1006,8 @@ module.exports =[
     mode: 'FA',
     rc: '(6)',
     ammo: '50(c) or 100(belt)',
-    avail: '16F',
+    avail: 16,
+    illegality: 'F',
     cost: 16300,
     conceal: '+10'
   },
@@ -961,7 +1016,8 @@ module.exports =[
     name: 'APDS',
     damage: '-',
     ap: '-4',
-    avail: '12F',
+    avail: 12,
+    illegality: 'F',
     cost: 120
   },
   {
@@ -969,7 +1025,8 @@ module.exports =[
     name: 'Assault cannon',
     damage: '-',
     ap: '-',
-    avail: '12F',
+    avail: 12,
+    illegality: 'F',
     cost: 400
   },
   {
@@ -977,7 +1034,8 @@ module.exports =[
     name: 'Explosive rounds',
     damage: '+1',
     ap: '-1',
-    avail: '9F',
+    avail: 9,
+    illegality: 'F',
     cost: 80
   },
   {
@@ -985,7 +1043,8 @@ module.exports =[
     name: 'Flechette rounds',
     damage: '+2',
     ap: '+5',
-    avail: '6R',
+    avail: 6,
+    illegality: 'R',
     cost: 65
   },
   {
@@ -993,7 +1052,8 @@ module.exports =[
     name: 'Gel rounds',
     damage: '+0S',
     ap: '+1',
-    avail: '2R',
+    avail: 2,
+    illegality: 'R',
     cost: 25
   },
   {
@@ -1001,7 +1061,8 @@ module.exports =[
     name: 'Hollow points',
     damage: '+1',
     ap: '+2',
-    avail: '4F',
+    avail: 4,
+    illegality: 'F',
     cost: 70
   },
   {
@@ -1009,7 +1070,8 @@ module.exports =[
     name: 'Injection darts',
     damage: '-',
     ap: '-',
-    avail: '4R',
+    avail: 4,
+    illegality: 'F',
     cost: 75
   },
   {
@@ -1017,7 +1079,8 @@ module.exports =[
     name: 'Regular ammo',
     damage: '-',
     ap: '-',
-    avail: '2R',
+    avail: 2,
+    illegality: 'R',
     cost: 20
   },
   {
@@ -1025,7 +1088,8 @@ module.exports =[
     name: 'Stick-n-Shock',
     damage: '-2S',
     ap: '-5',
-    avail: '6R',
+    avail: 6,
+    illegality: 'R',
     cost: 80
   },
   {
@@ -1033,7 +1097,8 @@ module.exports =[
     name: 'Tracer',
     damage: '-',
     ap: '-',
-    avail: '6R',
+    avail: 6,
+    illegality: 'R',
     cost: 60
   },
   {
@@ -1041,7 +1106,7 @@ module.exports =[
     name: 'Taser dart',
     damage: '-',
     ap: '-',
-    avail: '3',
+    avail: 3,
     cost: 50
   },
   {
@@ -1050,7 +1115,8 @@ module.exports =[
     damage: '10S',
     ap: '-4',
     blast: '10m Radius',
-    avail: '6R',
+    avail: 6,
+    illegality: 'R',
     cost: 100
   },
   {
@@ -1059,7 +1125,7 @@ module.exports =[
     damage: 'Special',
     ap: '-',
     blast: 'Special',
-    avail: '4',
+    avail: 4,
     cost: 125
   },
   {
@@ -1068,7 +1134,8 @@ module.exports =[
     damage: '18P',
     ap: '+5',
     blast: '-1/m',
-    avail: '11F',
+    avail: 11,
+    illegality: 'F',
     cost: 100
   },
   {
@@ -1077,7 +1144,8 @@ module.exports =[
     damage: '16P',
     ap: '-2',
     blast: '-2/m',
-    avail: '11F',
+    avail: 11,
+    illegality: 'F',
     cost: 100
   },
   {
@@ -1086,6 +1154,7 @@ module.exports =[
     damage: 'as Chemical',
     ap: '-',
     blast: '10m Radius',
+    // FIXME: still string
     avail: '2+Chemical Availability',
     cost: '40 + Chem cost'
   },
@@ -1095,7 +1164,8 @@ module.exports =[
     damage: '-',
     ap: '-',
     blast: '10m Radius',
-    avail: '4R',
+    avail: 4,
+    illegality: 'R',
     cost: 40
   },
   {
@@ -1104,7 +1174,8 @@ module.exports =[
     damage: '-',
     ap: '-',
     blast: '10m Radius',
-    avail: '6R',
+    avail: 6,
+    illegality: 'R',
     cost: 60
   }
 ];

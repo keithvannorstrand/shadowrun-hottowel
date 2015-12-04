@@ -5,6 +5,7 @@ var Character = require('../models/character');
 var skills = require('../data/skills');
 var weapons = require('../data/weapons');
 var qualities = require('../data/qualities');
+var ware = require('../data/ware');
 
 router.get('/characters', getCharacters);
 router.delete('/character/:id', deleteCharacter);
@@ -13,6 +14,7 @@ router.get('/skills', getSkills);
 router.get('/skill/:name', getSkill);
 router.get('/qualities', getQualities);
 router.get('/weapons', getWeapons);
+router.get('/ware', getWare);
 router.get('/groups', getSkillGroups);
 router.get('/*', four0four.notFoundMiddleware);
 module.exports = router;
@@ -32,7 +34,8 @@ function getCharacters(req, res){
 };
 
 function deleteCharacter(req, res){
-  // NEEDS TO BE AUTHENTICATED
+  // FIXME: 
+  //  NEEDS TO BE AUTHENTICATED
   // person logged in has access
   // GM can delete any from the game that they are running?
   // admin(me) can delete any character
@@ -76,6 +79,10 @@ function getQualities(req, res){
 
 function getWeapons(req, res){
   res.json(weapons);
+}
+
+function getWare(req, res){
+  res.json(ware);
 }
 
 function getSkillGroups(req, res){
