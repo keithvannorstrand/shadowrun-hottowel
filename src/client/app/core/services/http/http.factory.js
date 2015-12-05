@@ -19,6 +19,7 @@
       getSkillGroups: getSkillGroups,
       getItems: getItems,
       getWeapons: getWeapons,
+      getWare: getWare,
       getQualities: getQualities
     };
 
@@ -26,29 +27,29 @@
 
 
     // mostly for dev testing, should be using saveUserCharacter
-    function postCharacter(character){
+    function postCharacter(character) {
       console.log('hit post client side');
       return $http.post('/api/v1/character', character);
     }
 
-    function getCharacters(){
+    function getCharacters() {
       return $http.get('/api/v1/characters');
     }
 
-    function deleteCharacter(character){
+    function deleteCharacter(character) {
       var id = character._id;
       $http.delete('/api/v1/character/'+id);
     }
 
-    function getUserCharacters(){
+    function getUserCharacters() {
       return $http.get('/user/characters');
     }
 
-    function saveUserCharacter(character){
+    function saveUserCharacter(character) {
       return $http.post('/user/character', character);
     }
 
-    function updateUserCharacter(character){
+    function updateUserCharacter(character) {
       return $http.put('/user/character', character);
     }
 
@@ -66,6 +67,10 @@
 
     function getWeapons() {
       return $http.get('/api/v1/weapons');
+    }
+
+    function getWare() {
+      return $http.get('/api/v1/ware');
     }
 
     function getQualities() {

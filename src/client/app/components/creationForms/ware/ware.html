@@ -1,0 +1,46 @@
+<form>
+
+  <div>
+    <label for="grade">'ware Grade</label>
+    <select id="grade" ng-model="vm.grade" ng-options="grade for grade in ['Standard','Alphaware','Used']">
+      <pre>{{grade}}</pre>
+    </select>
+  </div>
+
+  <div ng-if="vm.grade">
+    <label for="super-type">'ware Type</label>
+    <select id="super-type" ng-model="vm.wareType" ng-options="supertype for supertype in ['Cyberware','Bioware']">
+      <pre>{{supertype}}</pre>
+    </select>
+  </div>
+
+  <div ng-if="vm.wareType">
+    <label for="ware-type">{{vm.wareType}} Type</label>
+    <select id="ware-type" ng-model="vm.type" ng-options="type for type in vm.types[vm.wareType.toLowerCase()]">
+      <pre>{{type}}</pre>
+    </select>
+  </div>
+
+  <div ng-if="vm.type">
+    <label for="ware-name">{{vm.type}}</label>
+    <select id="ware-name" ng-model="vm.ware"
+      ng-options="ware as ware.name for ware in vm.allWares[vm.wareType.toLowerCase()] | typefilter: vm.type">
+      <pre>{{ware}}</pre>
+    </select>
+  </div>
+
+  <div ng-if="vm.ware.ratings">
+    <label for="rating">Rating</label>
+    <select id="rating" ng-model="vm.rating" ng-options="rating as rating.rating for rating in vm.ware.ratings">
+      <pre>{{rating}}</pre>
+    </select>
+  </div>
+
+  <button class="btn btn-default" ng-click="vm.addWare()">Add {{vm.wareType}}</button>
+
+  <div>
+    <span ng-class="{bred: vm.limit.spent > vm.limit.total}">
+      {{vm.limit.spent}} out of {{vm.limit.total}} nuyen spent
+    </span>
+  </div>
+</form>

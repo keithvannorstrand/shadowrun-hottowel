@@ -54,7 +54,8 @@
     scope.$watch(function() {
       return vm.weapons
     }, function() {
-      vm.resource = vm.weapons.reduce(function(prev, cur){
+      // FIXME: needs to sum up ALL items not just weapons
+      vm.limit.spent = vm.weapons.reduce(function(prev, cur){
         return prev + (cur.cost * cur.quantity);
       },0)
     }, true);

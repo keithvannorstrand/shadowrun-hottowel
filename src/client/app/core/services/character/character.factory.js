@@ -23,6 +23,7 @@
       personalData: {},
       items: [],
       weapons: [],
+      ware: [],
       skills: [],
       qualities: []
     };
@@ -45,7 +46,8 @@
       getQualities: getQualities,
       getCharacter: getCharacter,
       getClass: getClass,
-      getWeapons: getWeapons
+      getWeapons: getWeapons,
+      getWare: getWare
     };
 
     return factory;
@@ -128,6 +130,10 @@
 
     function getWeapons() {
       return character.weapons;
+    }
+
+    function getWare() {
+      return character.ware;
     }
 
     // helper functions

@@ -13,6 +13,10 @@
       skills: {
         single: 0,
         group: 0
+      },
+      resource: {
+        spent: 0,
+        total: 0
       }
     };
 
@@ -161,15 +165,15 @@
 
     function setResources(priority){
       switch(priority.toUpperCase()){
-        case 'A': limits.resource = 450000;
+        case 'A': limits.resource.total = 450000;
                   break;
-        case 'B': limits.resource = 275000;
+        case 'B': limits.resource.total = 275000;
                   break;
-        case 'C': limits.resource = 140000;
+        case 'C': limits.resource.total = 140000;
                   break;
-        case 'D': limits.resource = 50000;
+        case 'D': limits.resource.total = 50000;
                   break;
-        case 'E': limits.resource = 6000;
+        case 'E': limits.resource.total = 6000;
                   break;
       }
       console.log('resource limits', limits.resource);
@@ -225,7 +229,7 @@
     }
 
     function getResources(){
-      return limits;
+      return limits.resource;
     }
 
     function getMetatypes(){

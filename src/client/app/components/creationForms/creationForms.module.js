@@ -10,6 +10,7 @@
     'app.components.creationForms.knowledge',
     'app.components.creationForms.qualities',
     'app.components.creationForms.skills',
-    'app.components.creationForms.weapons'
+    'app.components.creationForms.weapons',
+    'app.components.creationForms.ware'
   ]);
 })();
