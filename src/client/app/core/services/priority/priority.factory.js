@@ -34,7 +34,8 @@
       getAttributes: getAttributes,
       getMagic: getMagic,
       getResources: getResources,
-      getMetatypes: getMetatypes
+      getMetatypes: getMetatypes,
+      getLimits: getLimits
     };
 
     return factory;
@@ -234,6 +235,10 @@
 
     function getMetatypes(){
       return limits.metatypes;
+    }
+
+    function getLimits(){
+      return limits;
     }
 
     // helper functions

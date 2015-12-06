@@ -12,6 +12,6 @@
     'app.components.characterDisplay',
     'app.components.dropdowns.character',
     'app.components.incrementer',
-
+    'app.components.limitBox'
   ]);
 }());

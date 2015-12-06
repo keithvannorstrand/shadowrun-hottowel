@@ -2,7 +2,7 @@
 
   <div>
     <label for="grade">'ware Grade</label>
-    <select id="grade" ng-model="vm.grade" ng-options="grade for grade in ['Standard','Alphaware','Used']">
+    <select id="grade" ng-model="vm.grade" ng-options="grade for grade in vm.grades">
       <pre>{{grade}}</pre>
     </select>
   </div>

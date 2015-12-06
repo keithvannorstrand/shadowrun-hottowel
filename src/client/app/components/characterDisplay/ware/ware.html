@@ -1,0 +1,22 @@
+<div>
+  <table class="table table-condensed">
+    <thead>
+      <tr>
+        <th>Cyberware</th>
+        <th>Rating</th>
+        <th>Essence</th>
+        <th>Capacity</th>
+        <th ng-if="vm.editable"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="ware in vm.ware | orderBy: 'name'">
+        <td>{{ware.name}}</td>
+        <td>{{ware.rating}}</td>
+        <td>{{ware.essence}}</td>
+        <td>{{ware.capacity}}</td>
+        <td ng-if="vm.editable"><span ng-click="vm.deleteWare($index)" class="glyphicon glyphicon-remove"></span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

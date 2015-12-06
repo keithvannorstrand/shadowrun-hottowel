@@ -19,11 +19,16 @@
   WareController.$inject = ['characterservice', 'priorityservice', 'httpservice'];
 
   function WareController(characterservice, priorityservice, httpservice) {
+
     var vm = this;
+    vm.grades = ['Standard','Alphaware','Betaware','Deltaware','Used'];
+    vm.wares = characterservice.getWare();
+    vm.limit = priorityservice.getResources();
 
     activate();
 
     vm.addWare = addWare;
+
 
     function activate() {
       httpservice.getWare()
@@ -43,12 +48,43 @@
           });
           console.log('types', vm.types);
         });
-      vm.wares = characterservice.getWare();
-      vm.limit = priorityservice.getResources();
     }
 
     function addWare(){
-      console.log(vm.ware);
+      var cyberware = {};
+      if(vm.ware.ratings){
+        cyberware = {
+          type: vm.ware.type,
+          name: vm.ware.name
+        };
+        angular.merge(cyberware, vm.rating);
+      } else {
+        cyberware = vm.ware;
+      }
+      switch(vm.grade){
+        case 'Alphaware':
+          cyberware.cost *= 1.2;
+          cyberware.avail += 2;
+          cyberware.essence *= 0.8;
+          break;
+        case 'Betaware':
+          cyberware.cost *= 1.5;
+          cyberware.avail += 4;
+          cyberware.essence *= 0.7;
+          break;
+        case 'Deltaware':
+          cyberware.cost *= 1.5;
+          cyberware.avail += 8;
+          cyberware.essence *= 0.5;
+          break;
+        case 'Used':
+          cyberware.cost *= 0.75;
+          cyberware.avail -= 4;
+          cyberware.essence *= 1.25;
+          break;
+      }
+      vm.wares.push(cyberware);
+      console.log(cyberware);
     }
   }
 

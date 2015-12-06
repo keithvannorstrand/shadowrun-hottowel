@@ -9,7 +9,7 @@
       restrict: 'E',
       templateUrl: 'app/components/characterDisplay/skills/skills.html',
       scope: {
-        editable: '@?'
+        editable: '=?'
       },
       controller: SkillsController,
       controllerAs: 'vm',

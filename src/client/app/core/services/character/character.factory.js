@@ -38,6 +38,7 @@
       setQualities: setQualities,
       setCharacter: setCharacter,
       setClass: setClass,
+      
       getAttributes: getAttributes,
       getSkills: getSkills,
       getKnowledge: getKnowledge,
