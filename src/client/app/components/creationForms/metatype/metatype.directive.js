@@ -10,8 +10,7 @@
       templateUrl: 'app/components/creationForms/metatype/metatype.html',
       scope: {},
       controller: MetatypeController,
-      controllerAs: 'vm',
-      link: metatypeLink
+      controllerAs: 'vm'
     };
   }
 
@@ -19,25 +18,14 @@
 
   function MetatypeController($scope, characterservice, priorityservice){
     var vm = this;
-    console.log(arguments);
     vm.metatypes = priorityservice.getMetatypes();
     vm.metatype = {metatype: 'Human', limit: 0};
-    vm.saveOnChange = function(){
+    $scope.$watch(function() {
+      return vm.metatype;
+    }, function() {
+      console.log(vm.metatypes);
       characterservice.setMetatype(vm.metatype.metatype);
-      priorityservice.setAttributeLimits(vm.metatype);
-    };
-    $scope.$watch(function(){
-      return priorityservice.getMetatypes();
-    }, function(newValue){
-      vm.metatypes = newValue;
-    })
-  }
-
-  function metatypeLink(scope, elem, attrs, ctrl){
-    scope.$watch(function(){
-      return scope.vm.metatype;
-    }, function(){
-      ctrl.saveOnChange();
+      priorityservice.setAttributeLimits(vm.metatype)
     }, true);
   }
 

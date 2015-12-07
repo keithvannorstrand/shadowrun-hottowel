@@ -4,7 +4,7 @@
   angular.module('app.core.services.character')
     .factory('characterservice', characterFactory);
 
-  function characterFactory(){
+  function characterFactory() {
 
     var character = {
       attributes: {
@@ -32,9 +32,11 @@
     };
 
     var factory = {
+      setMetatype: setMetatype,
       setCharacter: setCharacter,
       setClass: setClass,
 
+      getMetatype: getMetatype,
       getAttributes: getAttributes,
       getSkills: getSkills,
       getKnowledge: getKnowledge,
@@ -51,43 +53,51 @@
 
 
     // exported functions
-    function setClass(cl){
+    function setMetatype(meta) {
+      character.personalData.metatype = meta;
+    }
+
+    function setClass(cl) {
       character.class = cl;
     }
 
-    function setCharacter(char){
+    function setCharacter(char) {
       angular.merge(character, char);
     }
 
-    function getAttributes(){
+    function getMetatype() {
+      return character.personalData.metatype;
+    }
+
+    function getAttributes() {
       return character.attributes;
     }
 
-    function getSkills(){
+    function getSkills() {
       return character.skills;
     }
 
-    function getKnowledge(){
+    function getKnowledge() {
       return character.knowledge;
     }
 
-    function getPersonalData(){
+    function getPersonalData() {
       return character.personalData;
     }
 
-    function getQualities(){
+    function getQualities() {
       return character.qualities;
     }
 
-    function getItems(){
+    function getItems() {
       return character.items;
     }
 
-    function getCharacter(){
+    function getCharacter() {
       return character;
     }
 
-    function getClass(){
+    function getClass() {
       return character.class;
     }
 
@@ -101,7 +111,7 @@
 
     // helper functions
     // calculates data that is dependent on attributes
-    function calcAttributes(){
+    function calcAttributes() {
       character.personalData.composure =
         (character.attributes.charisma + character.attributes.will) || 0;
       character.personalData.judgeIntentions =

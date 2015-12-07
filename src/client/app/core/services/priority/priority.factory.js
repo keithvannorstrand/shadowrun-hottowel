@@ -6,6 +6,9 @@
 
   function priorityFactory(){
     var limits = {
+      metatypes: [
+               {metatype: 'Human', limit:1 }
+             ],
       attributes: {
         min: {},
         max: {}
@@ -29,7 +32,6 @@
       setResources: setResources,
       setMetatypes: setMetatypes,
 
-      getPriorities: getPriorities,
       getSkills: getSkills,
       getAttributes: getAttributes,
       getMagic: getMagic,
@@ -98,7 +100,7 @@
 
     function setAttributeLimits(metatype){
       defaultAttributeLimits();
-      limits.attributes.special = metatype.limit;
+      limits.attributes.special = metatype.limit || 0;
       switch (metatype.metatype.toUpperCase()){
         case 'HUMAN':
           limits.attributes.min.edge = 2;
@@ -208,35 +210,38 @@
     }
 
     function setMetatypes(priority){
+      var metatypes = [];
       switch (priority.toUpperCase()){
-        case 'A': limits.metatypes = [
+        case 'A': metatypes = [
                  {metatype: 'Human', limit: 9},
                  {metatype: 'Elf', limit: 8},
                  {metatype: 'Dwarf', limit: 7},
                  {metatype: 'Ork', limit: 7},
                  {metatype: 'Troll', limit: 5}];
                    break;
-        case 'B':  limits.metatypes = [
+        case 'B':  metatypes = [
                  {metatype: 'Human', limit: 7},
                  {metatype: 'Elf', limit: 6},
                  {metatype: 'Dwarf', limit: 4},
                  {metatype: 'Ork', limit: 4},
                  {metatype: 'Troll', limit: 0}];
                    break;
-        case 'C': limits.metatypes = [
+        case 'C': metatypes = [
                  {metatype: 'Human', limit: 5},
                  {metatype: 'Elf', limit: 3},
                  {metatype: 'Dwarf', limit: 1},
                  {metatype: 'Ork', limit: 0}];
                   break;
-        case 'D': limits.metatypes = [
+        case 'D': metatypes = [
                  {metatype: 'Human', limit:3},
                  {metatype: 'Elf', limit: 0}];
                   break;
-        case 'E': limits.metatypes = [
+        case 'E': metatypes = [
                  {metatype: 'Human', limit:1 }];
                   break;
       }
+      limits.metatypes.splice(metatypes.length);
+      angular.merge(limits.metatypes, metatypes);
       console.log('metatype limits', limits.metatypes);
     }
 
