@@ -1,7 +1,38 @@
-<div>
-  {{vm.spent.resource}} out of {{vm.limits.resource}} resource<br>
-  {{vm.spent.attributes}} out of {{vm.limits.attributes.total}} attributes<br>
-  {{vm.spent.attributes.special}} out of {{vm.limits.attributes.special}} special<br>
-  {{vm.spent.skills.single}} out of {{vm.limits.skills.single}} single skill<br>
-  {{vm.spent.skills.group}} out of {{vm.limits.skills.group}} group skill<br>
+<div class="limit-box">
+  <table class="table table-condensed table-striped">
+    <thead>
+      <tr>
+        <th>Limit</th>
+        <th>Spent</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-class="{bred: vm.limits.attributes.spent > vm.limits.attributes.total}">
+        <td>Attributes</td>
+        <td>{{vm.limits.attributes.spent}}</td>
+        <td>{{vm.limits.attributes.total}}</td>
+      </tr>
+      <tr ng-class="{bred: vm.limits.attributes.specSpent > vm.limits.attributes.special}">
+        <td>Special</td>
+        <td>{{vm.limits.attributes.specSpent}}</td>
+        <td>{{vm.limits.attributes.special}}</td>
+      </tr>
+      <tr ng-class="{bred: vm.limits.skills.single.spent > vm.limits.skills.single.total}">
+        <td>Single</td>
+        <td>{{vm.limits.skills.single.spent}}</td>
+        <td>{{vm.limits.skills.single.total}}</td>
+      </tr>
+      <tr ng-class="{bred: vm.limits.skills.group.spent > vm.limits.skills.group.total}">
+        <td>Group</td>
+        <td>{{vm.limits.skills.group.spent}}</td>
+        <td>{{vm.limits.skills.group.total}}</td>
+      </tr>
+      <tr ng-class="{bred: vm.limits.resource.spent > vm.limits.resource.total}">
+        <td>Resource</td>
+        <td>{{vm.limits.resource.spent}}</td>
+        <td>{{vm.limits.resource.total}}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>

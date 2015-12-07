@@ -18,20 +18,11 @@
   ItemsFormController.$inject = ['characterservice'];
 
   function ItemsFormController(characterservice){
+    
     var vm = this;
     vm.items = characterservice.getItems();
+    vm.types = Object.keys(vm.items);
 
-    vm.addItem = function(){
-      vm.items.push({
-        item: vm.item,
-        quantity: vm.quantity,
-        cost: vm.cost
-      });
-      // characterservice.setItems(vm.items);
-      vm.item = '';
-      vm.quantity = 0;
-      vm.cost = 0;
-    };
   }
 
 })();

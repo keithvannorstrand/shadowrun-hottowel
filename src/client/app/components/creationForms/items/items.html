@@ -1,15 +1,5 @@
 <form>
-  <div>
-    <label for="item-name">Item</label>
-    <input type="text" class="form-control" id="item-name" placeholder="Pistol" ng-model='vm.item'>
-  </div>
-  <div>
-    <label for="item-quantity">Quantity</label>
-    <input type="number" class="form-control" id="item-quantity" ng-model='vm.quantity'>
-  </div>
-  <div>
-    <label for="item-cost">Cost per unit</label>
-    <input type="number" class="form-control" id="item-cost" ng-model='vm.cost'>
-  </div>
-  <button type="submit" class="btn btn-default" ng-click='vm.addItem()'>Add Item</button>
+  <select ng-options="type in vm.types">
+    <pre>{{ type }}</pre>
+  </select>
 </form>

@@ -21,7 +21,10 @@
         edge: 1
       },
       personalData: {},
-      items: [],
+      items: {
+        ware: [],
+        weapons: []
+      },
       weapons: [],
       ware: [],
       skills: [],
@@ -29,16 +32,9 @@
     };
 
     var factory = {
-      setAttributes: setAttributes,
-      setSkills: setSkills,
-      setKnowledge: setKnowledge,
-      setPersonalData: setPersonalData,
-      setItems: setItems,
-      setMetatype: setMetatype,
-      setQualities: setQualities,
       setCharacter: setCharacter,
       setClass: setClass,
-      
+
       getAttributes: getAttributes,
       getSkills: getSkills,
       getKnowledge: getKnowledge,
@@ -55,40 +51,6 @@
 
 
     // exported functions
-    function setAttributes(attributes){
-      if(attributes){
-        character.attributes = attributes;
-        calcAttributes();
-      }
-    }
-
-    function setSkills(skills){
-      character.skills = skills;
-    }
-
-    function setKnowledge(knowledge){
-      character.knowledge = knowledge;
-    }
-
-    function setPersonalData(data){
-      character.personalData = data;
-
-      character.personalData.notoriety =
-        (character.personalData.streetCred + character.personalData.publicAwareness) || 0;
-    }
-
-    function setMetatype(metatype){
-      character.personalData.metatype = metatype;
-    }
-
-    function setQualities(qualities){
-      character.qualities = qualities;
-    }
-
-    function setItems(items){
-      character.items = items;
-    }
-
     function setClass(cl){
       character.class = cl;
     }
@@ -130,11 +92,11 @@
     }
 
     function getWeapons() {
-      return character.weapons;
+      return character.items.weapons;
     }
 
     function getWare() {
-      return character.ware;
+      return character.items.ware;
     }
 
     // helper functions

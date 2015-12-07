@@ -11,8 +11,7 @@
       scope: {},
       controller: SkillsController,
       controllerAs: 'vm',
-      bindToController: true,
-      link: linkFn
+      bindToController: true
     };
   }
 
@@ -21,8 +20,6 @@
   function SkillsController(characterservice, httpservice, priorityservice){
 
     var vm = this;
-    // FIXME: should get this list from allSkills.type
-    // vm.types = ['Active', 'Social', 'Technical', 'Resonance', 'Magic', 'Vehicle', 'Knowledge', 'Group'];
     vm.rank = 1;
 
     activate();

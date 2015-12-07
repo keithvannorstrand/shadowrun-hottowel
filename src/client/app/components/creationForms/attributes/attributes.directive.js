@@ -12,7 +12,7 @@
       controller: AttributesController,
       controllerAs: 'vm',
       bindToController: true,
-      link: linkFn
+      link: attributesLink
     };
   }
 
@@ -26,10 +26,10 @@
     vm.special = 0;
   }
 
-  function linkFn(scope, elem, attrs, vm){
+  function attributesLink(scope, elem, attrs, vm) {
     scope.$watch(function(){
       return vm.attributes;
-    }, function(){
+    }, function() {
       if(vm.attributes.body > vm.limits.max.body){
         vm.attributes.body = vm.limits.max.body;
       }
@@ -106,20 +106,6 @@
       if(vm.attributes.edge < vm.limits.min.edge){
         vm.attributes.edge = vm.limits.min.edge;
       }
-
-      vm.spent = (vm.attributes.body - vm.limits.min.body
-        + vm.attributes.strength - vm.limits.min.strength
-        + vm.attributes.reaction - vm.limits.min.reaction
-        + vm.attributes.agility - vm.limits.min.agility
-        + vm.attributes.charisma - vm.limits.min.charisma
-        + vm.attributes.intuition - vm.limits.min.intuition
-        + vm.attributes.logic - vm.limits.min.logic
-        + vm.attributes.will - vm.limits.min.will) || 0;
-
-      vm.special = (vm.attributes.magic - vm.limits.min.magic
-        + vm.attributes.resonance - vm.limits.min.resonance
-        + vm.attributes.edge - vm.limits.min.edge) || 0;
-
     }, true);
   }
 })();

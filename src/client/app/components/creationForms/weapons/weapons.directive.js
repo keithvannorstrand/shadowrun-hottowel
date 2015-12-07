@@ -11,8 +11,7 @@
       scope: {},
       controller: WeaponsController,
       controllerAs: 'vm',
-      bindToController: true,
-      link: linkFn
+      bindToController: true
     };
   }
 
@@ -48,17 +47,6 @@
       vm.weapons.push(vm.weapon);
     }
 
-  }
-
-  function linkFn(scope, elem, attrs, vm) {
-    scope.$watch(function() {
-      return vm.weapons
-    }, function() {
-      // FIXME: needs to sum up ALL items not just weapons
-      vm.limit.spent = vm.weapons.reduce(function(prev, cur){
-        return prev + (cur.cost * cur.quantity);
-      },0)
-    }, true);
   }
 
 })();

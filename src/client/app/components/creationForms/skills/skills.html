@@ -35,16 +35,4 @@
   <button type="submit" class="btn btn-default" ng-click="vm.addSkill()" ng-if="vm.type!='Group'">Add Skill</button>
   <button type="submit" class="btn btn-default" ng-click="vm.addSkillGroup()" ng-if="vm.type=='Group'">Add Skill Group</button>
 
-  <div>
-    <div>
-      <span ng-class="{bred: vm.single > vm.limits.single}">
-        {{vm.single}} out of {{vm.limits.single}} single skill points spent
-      </span>
-    </div>
-    <div>
-      <span ng-class="{bred: vm.group > vm.limits.group}">
-        {{vm.group}} out of {{vm.limits.group}} group skill points spent
-      </span>
-    </div>
-  </div>
 </form>

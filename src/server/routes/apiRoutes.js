@@ -7,12 +7,14 @@ var weapons = require('../data/weapons');
 var qualities = require('../data/qualities');
 var ware = require('../data/ware');
 
+// backend routes for data
 router.get('/characters', getCharacters);
 router.delete('/character/:id', deleteCharacter);
 router.post('/character', postCharacter);
 router.get('/skills', getSkills);
 router.get('/skill/:name', getSkill);
 router.get('/qualities', getQualities);
+router.get('/items', getItems);
 router.get('/weapons', getWeapons);
 router.get('/ware', getWare);
 router.get('/groups', getSkillGroups);
@@ -34,7 +36,7 @@ function getCharacters(req, res){
 };
 
 function deleteCharacter(req, res){
-  // FIXME: 
+  // FIXME:
   //  NEEDS TO BE AUTHENTICATED
   // person logged in has access
   // GM can delete any from the game that they are running?
@@ -75,6 +77,14 @@ function getSkill(req, res){
 
 function getQualities(req, res){
   res.json(qualities);
+}
+
+function getItems(req, res){
+  var obj = {
+    ware: ware,
+    weapons: weapons
+  };
+  res.json(obj);
 }
 
 function getWeapons(req, res){

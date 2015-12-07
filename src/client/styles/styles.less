@@ -18,6 +18,23 @@
     /*font-weight: 400;*/
 }
 
+/* Bootstrap modifiers */
+.table-striped > tbody > tr:nth-child(2n+1) {
+   background: gray;
+ }
+.table-striped > tbody > tr:nth-child(2n) {
+  background: black;
+}
+
+.table-striped > thead > tr > th {
+  color: gold;
+  background: black;
+}
+
+.table-striped > tbody > tr > td {
+  color: white;
+}
+
 .btn, .badge, .modal, .modal-dialog, .modal-content,
 input, select {
     -ms-border-radius: 0 !important;
@@ -1945,7 +1962,20 @@ a {
 /*#endregion */
 
 /*#region Shadowrun */
-
 .number-input {
   width: 30px;
+}
+
+.limit-box {
+  position: fixed;
+  right: 0px;
+  top: 79px;
+  padding: 3px;
+  z-index: 100;
+  font-weight: bold;
+}
+@media (min-width: 768px){
+  .limit-box {
+    top: 52px;
+  }
 }

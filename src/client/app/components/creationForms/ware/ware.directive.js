@@ -11,8 +11,7 @@
       templateUrl: 'app/components/creationForms/ware/ware.html',
       controller: WareController,
       controllerAs: 'vm',
-      bindToController: true,
-      link: linkFn
+      bindToController: true
     };
   }
 
@@ -61,39 +60,37 @@
       } else {
         cyberware = vm.ware;
       }
-      switch(vm.grade){
-        case 'Alphaware':
-          cyberware.cost *= 1.2;
-          cyberware.avail += 2;
-          cyberware.essence *= 0.8;
-          break;
-        case 'Betaware':
-          cyberware.cost *= 1.5;
-          cyberware.avail += 4;
-          cyberware.essence *= 0.7;
-          break;
-        case 'Deltaware':
-          cyberware.cost *= 1.5;
-          cyberware.avail += 8;
-          cyberware.essence *= 0.5;
-          break;
-        case 'Used':
-          cyberware.cost *= 0.75;
-          cyberware.avail -= 4;
-          cyberware.essence *= 1.25;
-          break;
-      }
+      gradeCyberware(vm.grade, cyberware);
       vm.wares.push(cyberware);
       console.log(cyberware);
     }
   }
 
-  function linkFn(scope, elem, attrs, vm){
-    scope.$watch(function(){
-      return vm.wares;
-    }, function(){
-      // FIXME: needs to sum up ALL items not just cyberware
-    })
+  // ** Helper Functions ** //
+
+  function gradeCyberware(grade, cyberware){
+    switch(grade){
+      case 'Alphaware':
+        cyberware.cost *= 1.2;
+        cyberware.avail += 2;
+        cyberware.essence *= 0.8;
+        break;
+      case 'Betaware':
+        cyberware.cost *= 1.5;
+        cyberware.avail += 4;
+        cyberware.essence *= 0.7;
+        break;
+      case 'Deltaware':
+        cyberware.cost *= 1.5;
+        cyberware.avail += 8;
+        cyberware.essence *= 0.5;
+        break;
+      case 'Used':
+        cyberware.cost *= 0.75;
+        cyberware.avail -= 4;
+        cyberware.essence *= 1.25;
+        break;
+    }
   }
 
 })();

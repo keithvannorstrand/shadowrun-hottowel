@@ -11,8 +11,8 @@
         max: {}
       },
       skills: {
-        single: 0,
-        group: 0
+        single: {},
+        group: {}
       },
       resource: {
         spent: 0,
@@ -21,7 +21,7 @@
     };
 
     var factory = {
-      setPriorities: setPriorities,
+      setLimits: setLimits,
       setSkills: setSkills,
       setAttributeLimits: setAttributeLimits,
       setAttributes: setAttributes,
@@ -41,30 +41,56 @@
     return factory;
 
     // exported functions
-    function setPriorities(priorities){
-      setSkills(priorities.skill);
-      setAttributes(priorities.attribute);
-      setResources(priorities.resource);
-      setMagic(priorities.magic);
-      setMetatypes(priorities.metatype);
+    function setLimits(lims){
+      angular.merge(limits, lims);
     }
 
     function setSkills(priority){
       switch(priority.toUpperCase()){
-        case 'A': limits.skills.single = 46;
-                  limits.skills.group = 10;
+        case 'A': limits.skills.single = {
+                    total: 46,
+                    spent: 0
+                  };
+                  limits.skills.group = {
+                    total: 10,
+                    spent: 0
+                  };
                   break;
-        case 'B': limits.skills.single = 36;
-                  limits.skills.group = 5;
+        case 'B': limits.skills.single = {
+                    total: 36,
+                    spent: 0
+                  };
+                  limits.skills.group = {
+                    total: 5,
+                    spent: 0
+                  };
                   break;
-        case 'C': limits.skills.single = 28;
-                  limits.skills.group = 2;
+        case 'C': limits.skills.single = {
+                    total: 28,
+                    spent: 0
+                  };
+                  limits.skills.group = {
+                    total: 2,
+                    spent: 0
+                  };
                   break;
-        case 'D': limits.skills.single = 22;
-                  limits.skills.group = 0;
+        case 'D': limits.skills.single = {
+                    total: 22,
+                    spent: 0
+                  };
+                  limits.skills.group = {
+                    total: 0,
+                    spent: 0
+                  };
                   break;
-        case 'E': limits.skills.single = 10;
-                  limits.skills.group = 0;
+        case 'E': limits.skills.single = {
+                    total: 10,
+                    spent: 0
+                  };
+                  limits.skills.group = {
+                    total: 0,
+                    spent: 0
+                  };
                   break;
       }
       console.log('skills limits', limits.skills);
@@ -112,6 +138,7 @@
           limits.attributes.max.logic = 5;
           break;
       };
+      console.log(limits.attributes);
     }
 
     function setAttributes(priority){
@@ -207,14 +234,10 @@
                  {metatype: 'Elf', limit: 0}];
                   break;
         case 'E': limits.metatypes = [
-                 {metatype: 'Human', limit:0}];
+                 {metatype: 'Human', limit:1 }];
                   break;
       }
       console.log('metatype limits', limits.metatypes);
-    }
-
-    function getPriorities(){
-      // return priorities;
     }
 
     function getSkills(){
