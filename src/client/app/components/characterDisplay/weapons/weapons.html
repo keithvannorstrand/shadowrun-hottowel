@@ -30,7 +30,7 @@
         <td>{{weapon.conceal}}</td>
         <td>{{weapon.quantity}}</td>
         <td ng-if="vm.editable">{{weapon.cost}}</td>
-        <td ng-if="vm.editable"><span ng-click="vm.deleteWeapon($index)" class="glyphicon glyphicon-remove"></span></td>
+        <td ng-if="vm.editable"><span ng-click="vm.deleteWeapon(weapon)" class="glyphicon glyphicon-remove"></span></td>
       </tr>
     </tbody>
   </table>

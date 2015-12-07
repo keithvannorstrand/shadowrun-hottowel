@@ -30,8 +30,12 @@
       vm.weapons = characterservice.getWeapons();
     }
 
-    function deleteWeapon(index){
-      vm.weapons.splice(index, 1);
+    function deleteWeapon(weapon){
+      for (var i=0; i<vm.weapons.length; i++){
+        if (weapon === vm.weapons[i]){
+          return vm.weapons.splice(i, 1);
+        }
+      }
     }
   }
 

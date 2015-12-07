@@ -15,7 +15,7 @@
         <td>{{ware.rating}}</td>
         <td>{{ware.essence}}</td>
         <td>{{ware.capacity}}</td>
-        <td ng-if="vm.editable"><span ng-click="vm.deleteWare($index)" class="glyphicon glyphicon-remove"></span></td>
+        <td ng-if="vm.editable"><span ng-click="vm.deleteWare(ware)" class="glyphicon glyphicon-remove"></span></td>
       </tr>
     </tbody>
   </table>

@@ -30,8 +30,12 @@
       vm.ware = characterservice.getWare();
     }
 
-    function deleteWare(index){
-      vm.ware.splice(index, 1);
+    function deleteWare(ware){
+      for (var i=0; i<vm.ware.length; i++){
+        if (ware === vm.ware[i]){
+          return vm.ware.splice(i, 1);
+        }
+      }
     }
   }
 

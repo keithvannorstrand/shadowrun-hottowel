@@ -14,13 +14,6 @@
       controller: SkillsController,
       controllerAs: 'vm',
       bindToController: true
-      // link: function (scope, elem, attrs, ctrl){
-      //   scope.$watch(function(){
-      //     return characterservice.getSkills();
-      //   }, function(newVal){
-      //     ctrl.skills = characterservice.getSkills();
-      //   });
-      // }
     };
   }
 
@@ -32,9 +25,14 @@
     vm.editable = Boolean(vm.editable) || false;
     vm.skills = characterservice.getSkills();
 
-    vm.deleteSkill = function(index){
-      vm.skills.splice(index, 1);
-      // characterservice.setSkills(vm.skills);
+    vm.deleteSkill = deleteSkill;
+
+    function deleteSkill(skill){
+      for (var i=0; i<vm.skills.length; i++){
+        if (skill === vm.skills[i]){
+          return vm.skills.splice(i, 1);
+        }
+      }
     }
   }
 
