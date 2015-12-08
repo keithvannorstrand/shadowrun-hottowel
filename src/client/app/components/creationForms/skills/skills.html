@@ -1,7 +1,7 @@
 <form>
   <div>
     <label for="skill-type">Skill Type</label>
-    <select id="skill-type" ng-model="vm.type" ng-options="type for type in vm.types">
+    <select id="skill-type" ng-model="vm.type" ng-init="vm.type='bongo'" ng-options="type for type in vm.types">
       <pre>{{type}}</pre>
     </select>
   </div>

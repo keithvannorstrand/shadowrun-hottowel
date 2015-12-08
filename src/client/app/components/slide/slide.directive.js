@@ -43,17 +43,35 @@
   function link(scope, element, attrs) {
     var target = document.querySelector(attrs.srSlideToggle);
     attrs.expanded = false;
+    var content = target.querySelector('.slideable_content');
+
+    scope.$watch(function(){
+      return content.clientHeight;
+    }, function(newVal, oldVal){
+      if(oldVal!==0 && oldVal!==newVal){
+        slideOut();
+        attrs.expanded = true;
+      }
+    });
+
     element.bind('click', function() {
-      var content = target.querySelector('.slideable_content');
+      toggleSlide();
+      attrs.expanded = !attrs.expanded;
+    });
+
+    function toggleSlide(){
       if(!attrs.expanded) {
-        content.style.border = '1px solid rgba(0,0,0,0)';
-        var y = content.clientHeight;
-        content.style.border = 0;
-        target.style.height = (y+5) + 'px';
+        slideOut();
       } else {
         target.style.height = '0px';
       }
-      attrs.expanded = !attrs.expanded;
-    });
+    }
+
+    function slideOut(){
+      content.style.border = '1px solid rgba(0,0,0,0)';
+      var y = content.clientHeight;
+      content.style.border = 0;
+      target.style.height = (y+5) + 'px';
+    }
   }
 })();

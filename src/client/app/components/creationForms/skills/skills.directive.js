@@ -62,34 +62,4 @@
     }
   }
 
-  function linkFn(scope, elem, attrs, vm){
-    scope.$watch(function(){
-      return vm.skills;
-    }, function(){
-      if(vm.skills.length){
-        vm.single = vm.skills.reduce(function(prev, cur){
-          var type = cur.type.toLowerCase();
-          if(type != 'knowledge' && type != 'group'){
-            if(cur.specialization)
-            {
-              return prev + cur.rank + 1;
-            }
-            return prev + cur.rank;
-          }
-          return prev;
-        }, 0);
-        vm.group = vm.skills.reduce(function(prev, cur){
-          var type = cur.type.toLowerCase();
-          if(type == 'group'){
-            return prev + cur.rank;
-          }
-          return prev;
-        }, 0);
-      } else {
-        vm.single = 0;
-        vm.group = 0;
-      }
-    }, true)
-  }
-
 })();
