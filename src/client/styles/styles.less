@@ -585,7 +585,7 @@ form {
     display: block;
     background: #111;
     color: #eee;
-    position: relative;
+    position: fixed;
 }
 
     .sidebar hr {
@@ -811,7 +811,7 @@ form {
     margin-left: 230px;
     margin-right: 0;
     width: auto;
-    background: #fff;
+    // background: #fff;
     min-height: 900px;
 }
 
@@ -1978,4 +1978,17 @@ a {
   .limit-box {
     top: 52px;
   }
+}
+
+.feature-background {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 40px;
+  left: 30px;
+  z-index: -10;
+}
+
+.white-text *{
+  color: white;
 }

@@ -8,14 +8,20 @@ var ware = require('../data/ware');
 var qualities = require('../data/qualities');
 
 
-var types ={};
+var types ={ware:{}};
 types.weapons = weapons.map(function(weapon) {
   return weapon.type;
 }).filter(function(type, index, array) {
   return array.indexOf(type)==index;
 });
 
-types.ware = ware.map(function(cur) {
+types.ware.cyberware = ware.cyberware.map(function(cur) {
+  return cur.type;
+}).filter(function(cur, index, array) {
+  return array.indexOf(cur)==index;
+});
+
+types.ware.bioware = ware.bioware.map(function(cur) {
   return cur.type;
 }).filter(function(cur, index, array) {
   return array.indexOf(cur)==index;
@@ -58,7 +64,7 @@ function getAllWeapons(req, res) {
   });
 }
 
-function getNamedWeapons(req, res) {
+function getNamedWeapon(req, res) {
   var name = req.params.name;
   var output = weapons.filter(function(cur){
     return cur.name == name;
@@ -110,9 +116,13 @@ function getAllWare(req, res) {
 
 function getNamedWare(req, res) {
   var name = req.params.name;
-  var output = ware.filter(function(cur){
+  var output = ware.cyberware.filter(function(cur){
     return cur.name == name;
   });
+
+  output.concat(ware.bioware.filter(function(cur){
+    return cur.name == name;
+  }))
 
   if( output.length === 0 ){
     res.json({
