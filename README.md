@@ -17,8 +17,20 @@ All routes begin with /api/alpha
   ##### GET 'Ware
 
   * /items/ware => all cyberware and bioware
-  * /items/ware/name/:name => named 'ware
-  * /items/ware/type/:type => all 'ware of the given type
+
+    ##### GET Cyberware
+
+    * /items/cyberware => all cyberware
+    * /items/cyberware/name/:name => named cyberware
+    * /items/cyberware/type/:type => all cyberware of the given type
+
+    ##### GET Cyberware
+
+    * /items/bioware => all bioware
+    * /items/bioware/name/:name => named cyberware
+    * /items/bioware/type/:type => all bioware of the given type
+
+    ##### GET Bioware
 
   ##### GET Weapons
 
