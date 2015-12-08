@@ -827,7 +827,7 @@ module.exports = {
           cost: 12000
         },
         {
-          rating: '1',
+          rating: '5',
           essence: 2.5,
           capacity: '-',
           avail: 20,
@@ -835,7 +835,7 @@ module.exports = {
           cost: 15000
         },
         {
-          rating: '1',
+          rating: '6',
           essence: 3.0,
           capacity: '-',
           avail: 24,

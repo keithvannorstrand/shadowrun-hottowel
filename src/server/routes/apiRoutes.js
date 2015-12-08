@@ -12,7 +12,6 @@ router.get('/characters', getCharacters);
 router.delete('/character/:id', deleteCharacter);
 router.post('/character', postCharacter);
 router.get('/skills', getSkills);
-router.get('/skill/:name', getSkill);
 router.get('/qualities', getQualities);
 router.get('/items', getItems);
 router.get('/weapons', getWeapons);
@@ -69,11 +68,6 @@ function postCharacter(req, res){
 
 function getSkills(req, res){
   res.json(skills);
-}
-
-function getSkill(req, res){
-  var name = req.params.name;
-  res.send('temp');
 }
 
 function getQualities(req, res){

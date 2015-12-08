@@ -21,6 +21,7 @@ app.use(logger('dev'));
 app.use('/api/v1', require('./routes/apiRoutes'));
 app.use('/local', require('./routes/localAuth'));
 app.use('/user', require('./routes/userRoutes'));
+app.use('/api/alpha', require('./routes/alphaApiRoutes'));
 
 var mongoose = require('mongoose');
 var Character = require('./models/character.js');
