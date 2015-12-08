@@ -34,16 +34,18 @@ types.skills = skills.map(function(cur) {
 });
 // outfacing api routes
 
+// FIXME: fix routes /:name and /:type are the same route
+
 router.get('/items', getAllItems);
 router.get('/items/weapons', getAllWeapons);
-router.get('/items/weapons/:name', getNamedWeapon);
-router.get('/items/weapons/:type', getTypedWeapons);
+router.get('/items/weapons/name/:name', getNamedWeapon);
+router.get('/items/weapons/type/:type', getTypedWeapons);
 router.get('/items/ware/', getAllWare);
-router.get('/items/ware/:name', getNamedWare);
-router.get('/items/ware/:type', getTypedWare);
+router.get('/items/ware/name/:name', getNamedWare);
+router.get('/items/ware/type/:type', getTypedWare);
 router.get('/skills', getAllSkills);
-router.get('/skills/:name', getNamedSkill);
-router.get('/skills/:type', getTypedSkills);
+router.get('/skills/name/:name', getNamedSkill);
+router.get('/skills/type/:type', getTypedSkills);
 router.get('/characters', getAllCharacters);
 router.get('/*', four0four.notFoundMiddleware);
 module.exports = router;
@@ -177,7 +179,7 @@ function getNamedSkill(req, res) {
   if( output.length === 0 ){
     res.json({
       status: 404,
-      message: 'Name not found among ware'
+      message: 'Name not found among skills'
     });
   } else {
     res.json({
