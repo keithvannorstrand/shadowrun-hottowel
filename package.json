@@ -4,12 +4,12 @@
   "version": "0.0.0",
   "scripts": {
     "init": "npm install",
-    "postinstall": "bower install",
+    "install": "bower install",
     "start": "node src/server/app.js",
     "test": "gulp test"
   },
   "dependencies": {
-    "bower": "1.6.5",
+    "bower": "^1.6.5",
     "body-parser": "^1.8.2",
     "express": "^4.9.3",
     "mongoose": "^4.2.3",
