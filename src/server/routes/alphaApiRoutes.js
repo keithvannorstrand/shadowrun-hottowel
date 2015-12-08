@@ -143,11 +143,26 @@ function getNamedWare(req, res) {
 function getTypedWare(req, res) {
   var type = req.params.type;
 
+  if(type.toLowerCase()==='cyberware') {
+    res.json({
+      status: 200,
+      message: 'Success',
+      data: ware.cyberware
+    });
+  } else if(type.toLowerCase()==='bioware') {
+    res.json({
+      status: 200,
+      message: 'Success',
+      data: ware.bioware
+    });
+  }
+
+
   if(types.ware.indexOf(type) === -1) {
     res.json({
       status: 404,
       message: 'Ware type not found. Data contains available types',
-      data: types
+      data: types.ware
     });
   }
 
@@ -197,7 +212,7 @@ function getTypedSkills(req, res) {
     res.json({
       status: 404,
       message: 'Skill type not found. Data contains available types',
-      data: types
+      data: types.skills
     });
   }
 
