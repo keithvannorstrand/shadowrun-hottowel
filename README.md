@@ -24,13 +24,11 @@ All routes begin with /api/alpha
     * /items/cyberware/name/:name => named cyberware
     * /items/cyberware/type/:type => all cyberware of the given type
 
-    ##### GET Cyberware
+    ##### GET Bioware
 
     * /items/bioware => all bioware
     * /items/bioware/name/:name => named cyberware
     * /items/bioware/type/:type => all bioware of the given type
-
-    ##### GET Bioware
 
   ##### GET Weapons
 
