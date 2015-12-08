@@ -19,9 +19,7 @@
 
   function CharacterController(){
     var vm = this;
-    console.log(vm.editable);
     vm.editable = Boolean(vm.editable) || false;
-    console.log('sheet editable', vm.editable);
   }
 
 })();

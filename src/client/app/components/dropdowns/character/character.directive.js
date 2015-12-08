@@ -30,7 +30,6 @@
       httpservice.getCharacters()
       .then(function(response){
         vm.characters = response.data;
-        console.log('successfully got all characters', response);
       }).catch(function(error){
         console.log('failed to get all characters', error);
       });

@@ -24,7 +24,6 @@
     $scope.$watch(function() {
       return vm.metatype;
     }, function() {
-      console.log(vm.metatypes);
       characterservice.setMetatype(vm.metatype.metatype);
       priorityservice.setAttributeLimits(vm.metatype)
     }, true);

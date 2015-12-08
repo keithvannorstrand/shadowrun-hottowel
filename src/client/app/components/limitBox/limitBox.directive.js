@@ -23,7 +23,6 @@
 
     vm.character = characterservice.getCharacter();
     vm.limits = priorityservice.getLimits();
-    console.log('CHARACTER', vm.character);
   }
 
   function boxLink(scope, elem, attrs, vm) {

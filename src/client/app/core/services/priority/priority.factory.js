@@ -123,7 +123,6 @@
                   };
                   break;
       }
-      console.log('skills limits', limits.skills);
     }
 
     function setAttributeLimits(metatype){
@@ -168,7 +167,6 @@
           limits.attributes.max.logic = 5;
           break;
       };
-      console.log(limits.attributes);
     }
 
     function setAttributes(priority){
@@ -218,7 +216,6 @@
         case 'E': setMinMagicAndResonance(0,0);
                   break;
       }
-      console.log('magic limits', limits.attributes.min);
     }
 
     function setResources(priority){
@@ -234,7 +231,6 @@
         case 'E': limits.resource.total = 6000;
                   break;
       }
-      console.log('resource limits', limits.resource);
     }
 
     function setMetatypes(priority){
@@ -270,7 +266,6 @@
       }
       limits.metatypes.splice(metatypes.length);
       angular.merge(limits.metatypes, metatypes);
-      console.log('metatype limits', limits.metatypes);
     }
 
     function getSkills(){

@@ -34,7 +34,6 @@
         .then(function(response) {
           vm.types={};
           vm.allWares = response.data;
-          console.log('allWares',vm.allWares);
           vm.types.cyberware = vm.allWares.cyberware.map(function(ware) {
             return ware.type;
           }).filter(function(type, index, array) {
@@ -45,7 +44,6 @@
           }).filter(function(type, index, array) {
             return array.indexOf(type)==index;
           });
-          console.log('types', vm.types);
         });
     }
 
@@ -62,7 +60,6 @@
       }
       gradeCyberware(vm.grade, cyberware);
       vm.wares.push(cyberware);
-      console.log(cyberware);
     }
   }
 
