@@ -41,8 +41,12 @@ router.get('/items/weapons', getAllWeapons);
 router.get('/items/weapons/name/:name', getNamedWeapon);
 router.get('/items/weapons/type/:type', getTypedWeapons);
 router.get('/items/ware/', getAllWare);
-router.get('/items/ware/name/:name', getNamedWare);
-router.get('/items/ware/type/:type', getTypedWare);
+router.get('/items/cyberware', getAllCyberware);
+router.get('/items/cyberware/name/:name', getNamedCyberware);
+router.get('/items/cyberware/type/:type', getTypedCyberware);
+router.get('/items/bioware', getAllBioware);
+router.get('/items/bioware/name/:name', getNamedBioware);
+router.get('/items/bioware/type/:type', getTypedBioware);
 router.get('/skills', getAllSkills);
 router.get('/skills/name/:name', getNamedSkill);
 router.get('/skills/type/:type', getTypedSkills);
@@ -116,20 +120,24 @@ function getAllWare(req, res) {
   });
 }
 
-function getNamedWare(req, res) {
+function getAllBioware(req, res) {
+  res.json({
+    data: ware.bioware,
+    status: 200,
+    message: 'Successful'
+  });
+}
+
+function getNamedBioware(req, res) {
   var name = req.params.name;
-  var output = ware.cyberware.filter(function(cur){
+  var output = ware.bioware.filter(function(cur){
     return cur.name == name;
   });
-
-  output.concat(ware.bioware.filter(function(cur){
-    return cur.name == name;
-  }))
 
   if( output.length === 0 ){
     res.json({
       status: 404,
-      message: 'Name not found among ware'
+      message: 'Name not found among Bioware'
     });
   } else {
     res.json({
@@ -140,25 +148,60 @@ function getNamedWare(req, res) {
   }
 }
 
-function getTypedWare(req, res) {
+function getTypedBioware(req, res) {
   var type = req.params.type;
 
-  if(type.toLowerCase()==='cyberware') {
+  if(types.ware.bioware.indexOf(type) === -1) {
     res.json({
-      status: 200,
-      message: 'Success',
-      data: ware.cyberware
-    });
-  } else if(type.toLowerCase()==='bioware') {
-    res.json({
-      status: 200,
-      message: 'Success',
-      data: ware.bioware
+      status: 404,
+      message: 'Bioware type not found. Data contains available types',
+      data: types.ware.bioware
     });
   }
 
+  var output = ware.bioware.filter(function(cur) {
+    return cur.type === type;
+  });
 
-  if(types.ware.indexOf(type) === -1) {
+  res.json({
+    status: 200,
+    message: 'Success',
+    data: output
+  });
+}
+
+function getAllCyberware(req, res) {
+  res.json({
+    data: ware.cyberware,
+    status: 200,
+    message: 'Successful'
+  });
+}
+
+function getNamedCyberware(req, res) {
+  var name = req.params.name;
+  var output = ware.cyberware.filter(function(cur){
+    return cur.name == name;
+  });
+
+  if( output.length === 0 ){
+    res.json({
+      status: 404,
+      message: 'Name not found among Cyberware'
+    });
+  } else {
+    res.json({
+      status: 200,
+      data: output,
+      message: 'Success'
+    });
+  }
+}
+
+function getTypedCyberware(req, res) {
+  var type = req.params.type;
+
+  if(types.ware.cyberware.indexOf(type) === -1) {
     res.json({
       status: 404,
       message: 'Ware type not found. Data contains available types',
@@ -166,7 +209,7 @@ function getTypedWare(req, res) {
     });
   }
 
-  var output = ware.filter(function(cur) {
+  var output = ware.cyberware.filter(function(cur) {
     return cur.type === type;
   });
 
