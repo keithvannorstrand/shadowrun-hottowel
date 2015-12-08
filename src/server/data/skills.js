@@ -603,7 +603,6 @@ module.exports = [
     default: true,
     specializations: ['Hydrofoil', 'Motorboat', 'Remote Operation', 'Sail', 'Ship', 'Submarine']
   },
-  // FIXME: NOT THE FULL EXTENT OF KNOWLEDGE SKILLS
   {
     name: 'Seattle Street Gang',
     attribute: '',

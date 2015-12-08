@@ -16,13 +16,6 @@
       controller: QualityController,
       controllerAs: 'vm',
       bindToController: true,
-      link: function(scope, elem, attrs, ctrl){
-        scope.$watch(function(){
-          return characterservice.getQualities();
-        }, function(){
-          ctrl.qualities = characterservice.getQualities();
-        });
-      }
     }
   }
 
@@ -36,7 +29,6 @@
     vm.deleteQuality = function(index){
       if(vm.editable){
         vm.qualities.splice(index, 1);
-        characterservice.setQualities(vm.qualities);
       }
     };
   }

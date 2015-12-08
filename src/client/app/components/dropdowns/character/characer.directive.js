@@ -18,9 +18,9 @@
     };
   }
 
-  DropdownController.$inject = ['characterservice', 'httpservice'];
+  DropdownController.$inject = ['characterservice', 'httpservice', 'priorityservice'];
 
-  function DropdownController(characterservice, httpservice){
+  function DropdownController(characterservice, httpservice, priorityservice){
     var vm = this;
     vm.character = {};
 
@@ -38,6 +38,7 @@
 
     function onChange(){
       characterservice.setCharacter(vm.character);
+      priorityservice.setLimits(vm.character.limits);
     }
   }
 

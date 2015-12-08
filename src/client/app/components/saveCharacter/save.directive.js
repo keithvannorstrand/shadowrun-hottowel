@@ -15,13 +15,15 @@
     };
   }
 
-  SaveController.$inject = ['characterservice', 'httpservice'];
+  SaveController.$inject = ['characterservice', 'httpservice', 'priorityservice'];
 
-  function SaveController(characterservice, httpservice){
+  function SaveController(characterservice, httpservice, priorityservice){
     var vm = this;
 
     vm.save = function(){
       var character = characterservice.getCharacter();
+      character.limits = priorityservice.getLimits();
+      console.log('CHARACTER', character);
       httpservice.postCharacter(character);
     };
   }

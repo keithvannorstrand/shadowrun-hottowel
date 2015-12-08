@@ -7,8 +7,11 @@
   function priorityFactory(){
     var limits = {
       metatypes: [
-               {metatype: 'Human', limit:1 }
-             ],
+        {
+          metatype: 'Human',
+          limit:1 
+        }
+      ],
       attributes: {
         min: {},
         max: {}
@@ -24,6 +27,8 @@
     };
 
     var factory = {
+      reset: reset,
+
       setLimits: setLimits,
       setSkills: setSkills,
       setAttributeLimits: setAttributeLimits,
@@ -43,6 +48,29 @@
     return factory;
 
     // exported functions
+    function reset() {
+      angular.merge(limits, {
+        metatypes: [
+          {
+            metatype: 'Human',
+            limit:1 
+          }
+        ],
+        attributes: {
+          min: {},
+          max: {}
+        },
+        skills: {
+          single: {},
+          group: {}
+        },
+        resource: {
+          spent: 0,
+          total: 0
+        }
+      })
+    }
+
     function setLimits(lims){
       angular.merge(limits, lims);
     }

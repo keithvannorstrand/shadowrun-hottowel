@@ -6,6 +6,7 @@
         <th>Rating</th>
         <th>Essence</th>
         <th>Capacity</th>
+        <th ng-if="vm.editable">Cost</th>
         <th ng-if="vm.editable"></th>
       </tr>
     </thead>
@@ -15,6 +16,7 @@
         <td>{{ware.rating}}</td>
         <td>{{ware.essence}}</td>
         <td>{{ware.capacity}}</td>
+        <td ng-if="vm.editable">{{ware.cost}}</td>
         <td ng-if="vm.editable"><span ng-click="vm.deleteWare(ware)" class="glyphicon glyphicon-remove"></span></td>
       </tr>
     </tbody>

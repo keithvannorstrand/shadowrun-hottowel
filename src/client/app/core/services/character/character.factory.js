@@ -25,13 +25,13 @@
         ware: [],
         weapons: []
       },
-      weapons: [],
-      ware: [],
       skills: [],
       qualities: []
     };
 
     var factory = {
+      reset: reset,
+
       setMetatype: setMetatype,
       setCharacter: setCharacter,
       setClass: setClass,
@@ -53,6 +53,13 @@
 
 
     // exported functions
+    function reset(){
+      console.log(character.skills);
+      character.skills.splice(0, character.skills.length);
+      
+      console.log('character', character);
+    }
+
     function setMetatype(meta) {
       character.personalData.metatype = meta;
     }
@@ -107,25 +114,6 @@
 
     function getWare() {
       return character.items.ware;
-    }
-
-    // helper functions
-    // calculates data that is dependent on attributes
-    function calcAttributes() {
-      character.personalData.composure =
-        (character.attributes.charisma + character.attributes.will) || 0;
-      character.personalData.judgeIntentions =
-        (character.attributes.charisma + character.attributes.intuition) || 0;
-      character.personalData.memory =
-        (character.attributes.logic + character.attributes.will) || 0;
-      character.personalData.walkSpeed =
-        (character.attributes.agility * 2) || 0;
-      character.personalData.runSpeed =
-        (character.attributes.agility * 4) || 0;
-      character.attributes.initiative =
-        (character.attributes.reaction + character.attributes.intuition) || 0;
-      character.attributes.astralInitiative =
-        (character.attributes.intuition * 2) || 0;
     }
   }
 

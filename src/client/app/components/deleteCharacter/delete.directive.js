@@ -15,14 +15,16 @@
     };
   }
 
-  DeleteController.$inject = ['characterservice', 'httpservice'];
+  DeleteController.$inject = ['characterservice', 'httpservice','priorityservice'];
 
-  function DeleteController(characterservice, httpservice){
+  function DeleteController(characterservice, httpservice, priorityservice){
     var vm = this;
 
     vm.delete = function(){
       var character = characterservice.getCharacter();
-      httpservice.deleteCharacter(character);
+      // httpservice.deleteCharacter(character);
+      characterservice.reset();
+      priorityservice.reset();
     };
   }
 

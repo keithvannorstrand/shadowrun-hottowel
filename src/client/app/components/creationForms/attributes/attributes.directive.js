@@ -21,6 +21,7 @@
   function AttributesController(characterservice, priorityservice){
     var vm = this;
     vm.attributes = characterservice.getAttributes();
+    vm.personalData = characterservice.getPersonalData();
     vm.limits = priorityservice.getAttributes();
     vm.spent = 0;
     vm.special = 0;
@@ -106,6 +107,20 @@
       if(vm.attributes.edge < vm.limits.min.edge){
         vm.attributes.edge = vm.limits.min.edge;
       }
+
+      vm.attributes.initiative = vm.attributes.intuition + vm.attributes.reaction;
+      vm.attributes.astral = vm.attributes.intuition * 2;
+      vm.attributes.matrix = vm.attributes.intuition + vm.attributes.reaction;
+      vm.personalData.hitBox={
+        physical: Math.ceil(vm.attributes.body/2) + 8,
+        stun: Math.ceil(vm.attributes.will/2) + 8
+      };
+      vm.personalData.notoriety = vm.personalData.publicAwareness + vm.personalData.streetCred || 0;
+      vm.personalData.composure = vm.attributes.charisma + vm.attributes.will;
+      vm.personalData.memory = vm.attributes.logic + vm.attributes.will;
+      vm.personalData.judgeIntentions = vm.attributes.charisma + vm.attributes.intuition;
+      vm.personalData.walkSpeed = vm.attributes.agility*2;
+      vm.personalData.runSpeed = vm.attributes.agility*4;
     }, true);
   }
 })();

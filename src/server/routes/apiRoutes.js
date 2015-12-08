@@ -52,7 +52,8 @@ function deleteCharacter(req, res){
 function postCharacter(req, res){
   var query={'personalData.alias': req.body.personalData.alias};
   var update = req.body;
-  console.log(update);
+  console.log('SKILLS', update.skills);
+  console.log('ITEMS', update.items);
   var options = {upsert: true};
   Character.findOneAndUpdateQ(query, update, options)
     .then(function(data){

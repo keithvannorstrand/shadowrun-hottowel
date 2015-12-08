@@ -17,6 +17,7 @@
   MetatypeController.$inject = ['$scope', 'characterservice','priorityservice'];
 
   function MetatypeController($scope, characterservice, priorityservice){
+    // FIXME: should get set to metatype on character load
     var vm = this;
     vm.metatypes = priorityservice.getMetatypes();
     vm.metatype = {metatype: 'Human', limit: 0};
