@@ -26,7 +26,8 @@ app.use('/api/alpha', require('./routes/alphaApiRoutes'));
 var mongoose = require('mongoose');
 var Character = require('./models/character.js');
 var User = require('./models/user.js');
-mongoose.connect('mongodb://localhost/shadowrun');
+var mongouri = process.env.MONGOLAB_URI || 'mongodb://localhost/shadowrun';
+mongoose.connect(mongouri);
 
 console.log('About to crank up node');
 console.log('PORT=' + port);
