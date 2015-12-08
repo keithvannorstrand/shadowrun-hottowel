@@ -81,7 +81,8 @@ var characterSchema = new Schema({
         illegality: String,
         cost: Number,
         conceal: String,
-        blast: String
+        blast: String,
+        quantity: Number
       }
     ]
   },
