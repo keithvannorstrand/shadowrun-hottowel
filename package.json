@@ -9,6 +9,7 @@
     "test": "gulp test"
   },
   "dependencies": {
+    "bower": "1.6.5",
     "body-parser": "^1.8.2",
     "express": "^4.9.3",
     "mongoose": "^4.2.3",
