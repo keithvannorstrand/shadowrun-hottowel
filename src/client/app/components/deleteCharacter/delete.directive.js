@@ -22,9 +22,9 @@
 
     vm.delete = function(){
       var character = characterservice.getCharacter();
-      // httpservice.deleteCharacter(character);
-      characterservice.reset();
-      priorityservice.reset();
+      httpservice.deleteCharacter(character);
+      // characterservice.reset();
+      // priorityservice.reset();
     };
   }
 
